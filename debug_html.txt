@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" sizes="57x57" href="https://www.red.cl/wp-content/themes/red/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="https://www.red.cl/wp-content/themes/red/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://www.red.cl/wp-content/themes/red/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="https://www.red.cl/wp-content/themes/red/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://www.red.cl/wp-content/themes/red/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="https://www.red.cl/wp-content/themes/red/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="https://www.red.cl/wp-content/themes/red/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="https://www.red.cl/wp-content/themes/red/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://www.red.cl/wp-content/themes/red/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="https://www.red.cl/wp-content/themes/red/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://www.red.cl/wp-content/themes/red/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="https://www.red.cl/wp-content/themes/red/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://www.red.cl/wp-content/themes/red/favicon/favicon-16x16.png">
+	<link rel="manifest" href="https://www.red.cl/wp-content/themes/red/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#CF152D">
+	<meta name="msapplication-TileImage" content="https://www.red.cl/wp-content/themes/red/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#FFFFFF">
+	<!-- Bootstrap -->
+	<link href="https://www.red.cl/wp-content/themes/red/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://www.red.cl/wp-content/themes/red/css/jquery-ui.min.css" rel="stylesheet">
+	<link href="https://www.red.cl/wp-content/themes/red/css/bootstrap-select.min.css" rel="stylesheet">    
+	<link href="https://www.red.cl/wp-content/themes/red/css/jquery.datetimepicker.min.css" rel="stylesheet">    
+	<link href="https://www.red.cl/wp-content/themes/red/css/estilos.css" rel="stylesheet">
+	<link href="https://www.red.cl/wp-content/themes/red/css/custom.css" rel="stylesheet">
+	<!--[if lt IE 9]>   
+	<script src="https://www.red.cl/wp-content/themes/red/js/html5shiv.min.js"></script>
+	<script src="https://www.red.cl/wp-content/themes/red/js/respond.min.js"></script>
+	<![endif]-->
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+	<!-- This site is optimized with the Yoast SEO plugin v24.7 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>¿Cuándo llega? - Red Movilidad</title>
+	<meta name="description" content="Conoce en cuánto tiempo llegará tu bus al paradero donde estés." />
+	<link rel="canonical" href="https://www.red.cl/planifica-tu-viaje/cuando-llega/" />
+	<meta property="og:locale" content="es_ES" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="¿Cuándo llega? - Red Movilidad" />
+	<meta property="og:description" content="Conoce en cuánto tiempo llegará tu bus al paradero donde estés." />
+	<meta property="og:url" content="https://www.red.cl/planifica-tu-viaje/cuando-llega/" />
+	<meta property="og:site_name" content="Red Movilidad" />
+	<meta property="article:modified_time" content="2021-02-09T11:20:38+00:00" />
+	<meta property="og:image" content="https://www.red.cl/wp-content/uploads/2020/12/destacado-cuando-llega.jpg" />
+	<meta property="og:image:width" content="1140" />
+	<meta property="og:image:height" content="761" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.red.cl/planifica-tu-viaje/cuando-llega/","url":"https://www.red.cl/planifica-tu-viaje/cuando-llega/","name":"¿Cuándo llega? - Red Movilidad","isPartOf":{"@id":"https://www.red.cl/#website"},"primaryImageOfPage":{"@id":"https://www.red.cl/planifica-tu-viaje/cuando-llega/#primaryimage"},"image":{"@id":"https://www.red.cl/planifica-tu-viaje/cuando-llega/#primaryimage"},"thumbnailUrl":"https://www.red.cl/wp-content/uploads/2020/12/destacado-cuando-llega.jpg","datePublished":"2020-11-09T12:12:17+00:00","dateModified":"2021-02-09T11:20:38+00:00","description":"Conoce en cuánto tiempo llegará tu bus al paradero donde estés.","inLanguage":"es","potentialAction":[{"@type":"ReadAction","target":["https://www.red.cl/planifica-tu-viaje/cuando-llega/"]}]},{"@type":"ImageObject","inLanguage":"es","@id":"https://www.red.cl/planifica-tu-viaje/cuando-llega/#primaryimage","url":"https://www.red.cl/wp-content/uploads/2020/12/destacado-cuando-llega.jpg","contentUrl":"https://www.red.cl/wp-content/uploads/2020/12/destacado-cuando-llega.jpg","width":1140,"height":761,"caption":"Hombre esperando en paradero con móvil en la mano"},{"@type":"WebSite","@id":"https://www.red.cl/#website","url":"https://www.red.cl/","name":"Red Movilidad","description":"Consulta y planifica tus viajes en transporte público dentro de Santiago de Chile","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.red.cl/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"es"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//static.addtoany.com' />
+<link rel='dns-prefetch' href='//use.fontawesome.com' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.red.cl/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-svg-styles-css' href='https://www.red.cl/wp-content/uploads/font-awesome/v6.4.0/css/svg-with-js.css' type='text/css' media='all' />
+<style id='font-awesome-svg-styles-inline-css' type='text/css'>
+   .wp-block-font-awesome-icon svg::before,
+   .wp-rich-text-font-awesome-icon svg::before {content: unset;}
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='ctf_styles-css' href='https://www.red.cl/wp-content/plugins/custom-twitter-feeds-pro/css/ctf-styles.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-official-css' href='https://use.fontawesome.com/releases/v6.4.0/css/all.css' type='text/css' media='all' integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous" />
+<link rel='stylesheet' id='addtoany-css' href='https://www.red.cl/wp-content/plugins/add-to-any/addtoany.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-official-v4shim-css' href='https://use.fontawesome.com/releases/v6.4.0/css/v4-shims.css' type='text/css' media='all' integrity="sha384-TjXU13dTMPo+5ZlOUI1IGXvpmajjoetPqbUJqTx+uZ1bGwylKHNEItuVe/mg/H6l" crossorigin="anonymous" />
+<script type="text/javascript" id="addtoany-core-js-before">
+/* <![CDATA[ */
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_localize = {
+	Share: "Compartir",
+	Save: "Guardar",
+	Subscribe: "Suscribir",
+	Email: "Correo electrónico",
+	Bookmark: "Marcador",
+	ShowAll: "Mostrar todo",
+	ShowLess: "Mostrar menos",
+	FindServices: "Encontrar servicio(s)",
+	FindAnyServiceToAddTo: "Encuentra al instante cualquier servicio para añadir a",
+	PoweredBy: "Funciona con",
+	ShareViaEmail: "Compartir por correo electrónico",
+	SubscribeViaEmail: "Suscribirse a través de correo electrónico",
+	BookmarkInYourBrowser: "Añadir a marcadores de tu navegador",
+	BookmarkInstructions: "Presiona «Ctrl+D» o «\u2318+D» para añadir esta página a marcadores",
+	AddToYourFavorites: "Añadir a tus favoritos",
+	SendFromWebOrProgram: "Enviar desde cualquier dirección o programa de correo electrónico ",
+	EmailProgram: "Programa de correo electrónico",
+	More: "Más&#8230;",
+	ThanksForSharing: "¡Gracias por compartir!",
+	ThanksForFollowing: "¡Gracias por seguirnos!"
+};
+
+a2a_config.icon_color="transparent";
+/* ]]> */
+</script>
+<script type="text/javascript" defer src="https://static.addtoany.com/menu/page.js" id="addtoany-core-js"></script>
+<script type="text/javascript" src="https://www.red.cl/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://www.red.cl/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" defer src="https://www.red.cl/wp-content/plugins/add-to-any/addtoany.min.js" id="addtoany-jquery-js"></script>
+<link rel="https://api.w.org/" href="https://www.red.cl/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.red.cl/wp-json/wp/v2/pages/18" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.red.cl/xmlrpc.php?rsd" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.red.cl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.red.cl%2Fplanifica-tu-viaje%2Fcuando-llega%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.red.cl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.red.cl%2Fplanifica-tu-viaje%2Fcuando-llega%2F&#038;format=xml" />
+	
+	<script src="https://www.red.cl/wp-content/themes/red/js/jquery-3.2.1.min.js"></script>
+	<script src="https://www.red.cl/wp-content/themes/red/js/js.cookie.js"></script>
+	<script src="https://www.red.cl/wp-content/themes/red/js/es.js"></script>    
+	<script src="https://www.red.cl/wp-content/themes/red/js/functions.js"></script>
+	<script src="https://www.red.cl/wp-content/themes/red/js/favoritos.js"></script>
+	<script src="https://www.red.cl/wp-content/themes/red/js/mobile-detect.min.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-27818624-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-27818624-1');
+	</script>
+
+<link rel="stylesheet" id="asp-basic" href="https://www.red.cl/wp-content/cache/asp/style.basic-ho-is-po-no-da-co-au-ga-se-is.css?mq=ti6Qrb" media="all" /><style id='asp-instance-1'>div[id*='ajaxsearchpro1_'] div.asp_loader,div[id*='ajaxsearchpro1_'] div.asp_loader *{box-sizing:border-box !important;margin:0;padding:0;box-shadow:none}div[id*='ajaxsearchpro1_'] div.asp_loader{box-sizing:border-box;display:flex;flex:0 1 auto;flex-direction:column;flex-grow:0;flex-shrink:0;flex-basis:28px;max-width:100%;max-height:100%;align-items:center;justify-content:center}div[id*='ajaxsearchpro1_'] div.asp_loader-inner{width:100%;margin:0 auto;text-align:center;height:100%}@-webkit-keyframes rotate-simple{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}50%{-webkit-transform:rotate(180deg);transform:rotate(180deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-simple{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}50%{-webkit-transform:rotate(180deg);transform:rotate(180deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}div[id*='ajaxsearchpro1_'] div.asp_simple-circle{margin:0;height:100%;width:100%;animation:rotate-simple 0.8s infinite linear;-webkit-animation:rotate-simple 0.8s infinite linear;border:4px solid rgb(255,255,255);border-right-color:transparent;border-radius:50%;box-sizing:border-box}div[id*='ajaxsearchprores1_'] .asp_res_loader div.asp_loader,div[id*='ajaxsearchprores1_'] .asp_res_loader div.asp_loader *{box-sizing:border-box !important;margin:0;padding:0;box-shadow:none}div[id*='ajaxsearchprores1_'] .asp_res_loader div.asp_loader{box-sizing:border-box;display:flex;flex:0 1 auto;flex-direction:column;flex-grow:0;flex-shrink:0;flex-basis:28px;max-width:100%;max-height:100%;align-items:center;justify-content:center}div[id*='ajaxsearchprores1_'] .asp_res_loader div.asp_loader-inner{width:100%;margin:0 auto;text-align:center;height:100%}@-webkit-keyframes rotate-simple{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}50%{-webkit-transform:rotate(180deg);transform:rotate(180deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-simple{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}50%{-webkit-transform:rotate(180deg);transform:rotate(180deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}div[id*='ajaxsearchprores1_'] .asp_res_loader div.asp_simple-circle{margin:0;height:100%;width:100%;animation:rotate-simple 0.8s infinite linear;-webkit-animation:rotate-simple 0.8s infinite linear;border:4px solid rgb(255,255,255);border-right-color:transparent;border-radius:50%;box-sizing:border-box}#ajaxsearchpro1_1 div.asp_loader,#ajaxsearchpro1_2 div.asp_loader,#ajaxsearchpro1_1 div.asp_loader *,#ajaxsearchpro1_2 div.asp_loader *{box-sizing:border-box !important;margin:0;padding:0;box-shadow:none}#ajaxsearchpro1_1 div.asp_loader,#ajaxsearchpro1_2 div.asp_loader{box-sizing:border-box;display:flex;flex:0 1 auto;flex-direction:column;flex-grow:0;flex-shrink:0;flex-basis:28px;max-width:100%;max-height:100%;align-items:center;justify-content:center}#ajaxsearchpro1_1 div.asp_loader-inner,#ajaxsearchpro1_2 div.asp_loader-inner{width:100%;margin:0 auto;text-align:center;height:100%}@-webkit-keyframes rotate-simple{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}50%{-webkit-transform:rotate(180deg);transform:rotate(180deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-simple{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}50%{-webkit-transform:rotate(180deg);transform:rotate(180deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}#ajaxsearchpro1_1 div.asp_simple-circle,#ajaxsearchpro1_2 div.asp_simple-circle{margin:0;height:100%;width:100%;animation:rotate-simple 0.8s infinite linear;-webkit-animation:rotate-simple 0.8s infinite linear;border:4px solid rgb(255,255,255);border-right-color:transparent;border-radius:50%;box-sizing:border-box}@-webkit-keyframes asp_an_fadeInDown{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@keyframes asp_an_fadeInDown{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.asp_an_fadeInDown{-webkit-animation-name:asp_an_fadeInDown;animation-name:asp_an_fadeInDown}div.asp_r.asp_r_1,div.asp_r.asp_r_1 *,div.asp_m.asp_m_1,div.asp_m.asp_m_1 *,div.asp_s.asp_s_1,div.asp_s.asp_s_1 *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;-ms-box-sizing:content-box;-o-box-sizing:content-box;box-sizing:content-box;border:0;border-radius:0;text-transform:none;text-shadow:none;box-shadow:none;text-decoration:none;text-align:left;letter-spacing:normal}div.asp_r.asp_r_1,div.asp_m.asp_m_1,div.asp_s.asp_s_1{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}div.asp_r.asp_r_1,div.asp_r.asp_r_1 *,div.asp_m.asp_m_1,div.asp_m.asp_m_1 *,div.asp_s.asp_s_1,div.asp_s.asp_s_1 *{padding:0;margin:0}.wpdreams_clear{clear:both}.asp_w_container_1{width:100%}#ajaxsearchpro1_1,#ajaxsearchpro1_2,div.asp_m.asp_m_1{width:100%;height:auto;max-height:none;border-radius:5px;background:#d1eaff;margin-top:0;margin-bottom:0;background-image:-moz-radial-gradient(center,ellipse cover,rgb(225,99,92),rgb(225,99,92));background-image:-webkit-gradient(radial,center center,0px,center center,100%,rgb(225,99,92),rgb(225,99,92));background-image:-webkit-radial-gradient(center,ellipse cover,rgb(225,99,92),rgb(225,99,92));background-image:-o-radial-gradient(center,ellipse cover,rgb(225,99,92),rgb(225,99,92));background-image:-ms-radial-gradient(center,ellipse cover,rgb(225,99,92),rgb(225,99,92));background-image:radial-gradient(ellipse at center,rgb(225,99,92),rgb(225,99,92));overflow:hidden;border:0 none rgb(141,213,239);border-radius:0;box-shadow:none}#ajaxsearchpro1_1 .probox,#ajaxsearchpro1_2 .probox,div.asp_m.asp_m_1 .probox{margin:0;height:34px;background:transparent;border:0 solid rgb(104,174,199);border-radius:0;box-shadow:none}p[id*=asp-try-1]{color:rgb(85,85,85) !important;display:block}div.asp_main_container+[id*=asp-try-1]{width:100%}p[id*=asp-try-1] a{color:rgb(255,181,86) !important}p[id*=asp-try-1] a:after{color:rgb(85,85,85) !important;display:inline;content:','}p[id*=asp-try-1] a:last-child:after{display:none}#ajaxsearchpro1_1 .probox .proinput,#ajaxsearchpro1_2 .probox .proinput,div.asp_m.asp_m_1 .probox .proinput{font-weight:normal;font-family:"Open Sans";color:rgb(255,255,255);font-size:12px;line-height:15px;text-shadow:none;line-height:normal;flex-grow:1;order:5;margin:0 0 0 10px;padding:0 5px}#ajaxsearchpro1_1 .probox .proinput input.orig,#ajaxsearchpro1_2 .probox .proinput input.orig,div.asp_m.asp_m_1 .probox .proinput input.orig{font-weight:normal;font-family:"Open Sans";color:rgb(255,255,255);font-size:12px;line-height:15px;text-shadow:none;line-height:normal;border:0;box-shadow:none;height:34px;position:relative;z-index:2;padding:0 !important;padding-top:2px !important;margin:-1px 0 0 -4px !important;width:100%;background:transparent !important}#ajaxsearchpro1_1 .probox .proinput input.autocomplete,#ajaxsearchpro1_2 .probox .proinput input.autocomplete,div.asp_m.asp_m_1 .probox .proinput input.autocomplete{font-weight:normal;font-family:"Open Sans";color:rgb(255,255,255);font-size:12px;line-height:15px;text-shadow:none;line-height:normal;opacity:0.25;height:34px;display:block;position:relative;z-index:1;padding:0 !important;margin:-1px 0 0 -4px !important;margin-top:-34px !important;width:100%;background:transparent !important}.rtl #ajaxsearchpro1_1 .probox .proinput input.orig,.rtl #ajaxsearchpro1_2 .probox .proinput input.orig,.rtl #ajaxsearchpro1_1 .probox .proinput input.autocomplete,.rtl #ajaxsearchpro1_2 .probox .proinput input.autocomplete,.rtl div.asp_m.asp_m_1 .probox .proinput input.orig,.rtl div.asp_m.asp_m_1 .probox .proinput input.autocomplete{font-weight:normal;font-family:"Open Sans";color:rgb(255,255,255);font-size:12px;line-height:15px;text-shadow:none;line-height:normal;direction:rtl;text-align:right}.rtl #ajaxsearchpro1_1 .probox .proinput,.rtl #ajaxsearchpro1_2 .probox .proinput,.rtl div.asp_m.asp_m_1 .probox .proinput{margin-right:2px}.rtl #ajaxsearchpro1_1 .probox .proloading,.rtl #ajaxsearchpro1_1 .probox .proclose,.rtl #ajaxsearchpro1_2 .probox .proloading,.rtl #ajaxsearchpro1_2 .probox .proclose,.rtl div.asp_m.asp_m_1 .probox .proloading,.rtl div.asp_m.asp_m_1 .probox .proclose{order:3}div.asp_m.asp_m_1 .probox .proinput input.orig::-webkit-input-placeholder{font-weight:normal;font-family:"Open Sans";color:rgb(255,255,255);font-size:12px;text-shadow:none;opacity:0.85}div.asp_m.asp_m_1 .probox .proinput input.orig::-moz-placeholder{font-weight:normal;font-family:"Open Sans";color:rgb(255,255,255);font-size:12px;text-shadow:none;opacity:0.85}div.asp_m.asp_m_1 .probox .proinput input.orig:-ms-input-placeholder{font-weight:normal;font-family:"Open Sans";color:rgb(255,255,255);font-size:12px;text-shadow:none;opacity:0.85}div.asp_m.asp_m_1 .probox .proinput input.orig:-moz-placeholder{font-weight:normal;font-family:"Open Sans";color:rgb(255,255,255);font-size:12px;text-shadow:none;opacity:0.85;line-height:normal !important}#ajaxsearchpro1_1 .probox .proinput input.autocomplete,#ajaxsearchpro1_2 .probox .proinput input.autocomplete,div.asp_m.asp_m_1 .probox .proinput input.autocomplete{font-weight:normal;font-family:"Open Sans";color:rgb(255,255,255);font-size:12px;line-height:15px;text-shadow:none;line-height:normal;border:0;box-shadow:none}#ajaxsearchpro1_1 .probox .proloading,#ajaxsearchpro1_1 .probox .proclose,#ajaxsearchpro1_1 .probox .promagnifier,#ajaxsearchpro1_1 .probox .prosettings,#ajaxsearchpro1_2 .probox .proloading,#ajaxsearchpro1_2 .probox .proclose,#ajaxsearchpro1_2 .probox .promagnifier,#ajaxsearchpro1_2 .probox .prosettings,div.asp_m.asp_m_1 .probox .proloading,div.asp_m.asp_m_1 .probox .proclose,div.asp_m.asp_m_1 .probox .promagnifier,div.asp_m.asp_m_1 .probox .prosettings{width:34px;height:34px;flex:0 0 34px;flex-grow:0;order:7;text-align:center}#ajaxsearchpro1_1 .probox .proclose svg,#ajaxsearchpro1_2 .probox .proclose svg,div.asp_m.asp_m_1 .probox .proclose svg{fill:rgb(254,254,254);background:rgb(51,51,51);box-shadow:0 0 0 2px rgba(255,255,255,0.9);border-radius:50%;box-sizing:border-box;margin-left:-10px;margin-top:-10px;padding:4px}#ajaxsearchpro1_1 .probox .proloading,#ajaxsearchpro1_2 .probox .proloading,div.asp_m.asp_m_1 .probox .proloading{width:34px;height:34px;min-width:34px;min-height:34px;max-width:34px;max-height:34px}#ajaxsearchpro1_1 .probox .proloading .asp_loader,#ajaxsearchpro1_2 .probox .proloading .asp_loader,div.asp_m.asp_m_1 .probox .proloading .asp_loader{width:30px;height:30px;min-width:30px;min-height:30px;max-width:30px;max-height:30px}#ajaxsearchpro1_1 .probox .promagnifier,#ajaxsearchpro1_2 .probox .promagnifier,div.asp_m.asp_m_1 .probox .promagnifier{width:auto;height:34px;flex:0 0 auto;order:7;-webkit-flex:0 0 auto;-webkit-order:7}div.asp_m.asp_m_1 .probox .promagnifier:focus-visible{outline:black outset}#ajaxsearchpro1_1 .probox .proloading .innericon,#ajaxsearchpro1_2 .probox .proloading .innericon,#ajaxsearchpro1_1 .probox .proclose .innericon,#ajaxsearchpro1_2 .probox .proclose .innericon,#ajaxsearchpro1_1 .probox .promagnifier .innericon,#ajaxsearchpro1_2 .probox .promagnifier .innericon,#ajaxsearchpro1_1 .probox .prosettings .innericon,#ajaxsearchpro1_2 .probox .prosettings .innericon,div.asp_m.asp_m_1 .probox .proloading .innericon,div.asp_m.asp_m_1 .probox .proclose .innericon,div.asp_m.asp_m_1 .probox .promagnifier .innericon,div.asp_m.asp_m_1 .probox .prosettings .innericon{text-align:center}#ajaxsearchpro1_1 .probox .promagnifier .innericon,#ajaxsearchpro1_2 .probox .promagnifier .innericon,div.asp_m.asp_m_1 .probox .promagnifier .innericon{display:block;width:34px;height:34px;float:right}#ajaxsearchpro1_1 .probox .promagnifier .asp_text_button,#ajaxsearchpro1_2 .probox .promagnifier .asp_text_button,div.asp_m.asp_m_1 .probox .promagnifier .asp_text_button{display:block;width:auto;height:34px;float:right;margin:0;padding:0 10px 0 2px;font-weight:normal;font-family:"Open Sans";color:rgba(51,51,51,1);font-size:15px;line-height:normal;text-shadow:none;line-height:34px}#ajaxsearchpro1_1 .probox .promagnifier .innericon svg,#ajaxsearchpro1_2 .probox .promagnifier .innericon svg,div.asp_m.asp_m_1 .probox .promagnifier .innericon svg{fill:rgb(255,255,255)}#ajaxsearchpro1_1 .probox .prosettings .innericon svg,#ajaxsearchpro1_2 .probox .prosettings .innericon svg,div.asp_m.asp_m_1 .probox .prosettings .innericon svg{fill:rgb(255,255,255)}#ajaxsearchpro1_1 .probox .promagnifier,#ajaxsearchpro1_2 .probox .promagnifier,div.asp_m.asp_m_1 .probox .promagnifier{width:34px;height:34px;background-image:-webkit-linear-gradient(180deg,rgb(190,76,70),rgb(190,76,70));background-image:-moz-linear-gradient(180deg,rgb(190,76,70),rgb(190,76,70));background-image:-o-linear-gradient(180deg,rgb(190,76,70),rgb(190,76,70));background-image:-ms-linear-gradient(180deg,rgb(190,76,70) 0,rgb(190,76,70) 100%);background-image:linear-gradient(180deg,rgb(190,76,70),rgb(190,76,70));background-position:center center;background-repeat:no-repeat;order:11;-webkit-order:11;float:right;border:0 solid rgb(0,0,0);border-radius:0;box-shadow:0 0 0 0 rgba(255,255,255,0.61);cursor:pointer;background-size:100% 100%;background-position:center center;background-repeat:no-repeat;cursor:pointer}#ajaxsearchpro1_1 .probox .prosettings,#ajaxsearchpro1_2 .probox .prosettings,div.asp_m.asp_m_1 .probox .prosettings{width:34px;height:34px;background-image:-webkit-linear-gradient(185deg,rgb(190,76,70),rgb(190,76,70));background-image:-moz-linear-gradient(185deg,rgb(190,76,70),rgb(190,76,70));background-image:-o-linear-gradient(185deg,rgb(190,76,70),rgb(190,76,70));background-image:-ms-linear-gradient(185deg,rgb(190,76,70) 0,rgb(190,76,70) 100%);background-image:linear-gradient(185deg,rgb(190,76,70),rgb(190,76,70));background-position:center center;background-repeat:no-repeat;order:10;-webkit-order:10;float:right;border:0 solid rgb(104,174,199);border-radius:0;box-shadow:0 0 0 0 rgba(255,255,255,0.63);cursor:pointer;background-size:100% 100%;align-self:flex-end}#ajaxsearchprores1_1,#ajaxsearchprores1_2,div.asp_r.asp_r_1{position:absolute;z-index:11000;width:auto;margin:12px 0 0 0}#ajaxsearchprores1_1 .asp_nores,#ajaxsearchprores1_2 .asp_nores,div.asp_r.asp_r_1 .asp_nores{border:0 solid rgb(0,0,0);border-radius:0;box-shadow:0 5px 5px -5px #dfdfdf;padding:6px 12px 6px 12px;margin:0;font-weight:normal;font-family:inherit;color:rgba(74,74,74,1);font-size:1rem;line-height:1.2rem;text-shadow:none;font-weight:normal;background:rgb(255,255,255)}#ajaxsearchprores1_1 .asp_nores .asp_nores_kw_suggestions,#ajaxsearchprores1_2 .asp_nores .asp_nores_kw_suggestions,div.asp_r.asp_r_1 .asp_nores .asp_nores_kw_suggestions{color:rgba(234,67,53,1);font-weight:normal}#ajaxsearchprores1_1 .asp_nores .asp_keyword,#ajaxsearchprores1_2 .asp_nores .asp_keyword,div.asp_r.asp_r_1 .asp_nores .asp_keyword{padding:0 8px 0 0;cursor:pointer;color:rgba(20,84,169,1);font-weight:bold}#ajaxsearchprores1_1 .asp_results_top,#ajaxsearchprores1_2 .asp_results_top,div.asp_r.asp_r_1 .asp_results_top{background:rgb(255,255,255);border:1px none rgb(81,81,81);border-radius:0;padding:6px 12px 6px 12px;margin:0;text-align:center;font-weight:normal;font-family:"Open Sans";color:rgb(74,74,74);font-size:13px;line-height:16px;text-shadow:none}#ajaxsearchprores1_1 .results .item,#ajaxsearchprores1_2 .results .item,div.asp_r.asp_r_1 .results .item{height:auto;background:rgb(255,255,255)}#ajaxsearchprores1_1 .results .item.hovered,#ajaxsearchprores1_2 .results .item.hovered,div.asp_r.asp_r_1 .results .item.hovered{background-image:-moz-radial-gradient(center,ellipse cover,rgb(245,245,245),rgb(245,245,245));background-image:-webkit-gradient(radial,center center,0px,center center,100%,rgb(245,245,245),rgb(245,245,245));background-image:-webkit-radial-gradient(center,ellipse cover,rgb(245,245,245),rgb(245,245,245));background-image:-o-radial-gradient(center,ellipse cover,rgb(245,245,245),rgb(245,245,245));background-image:-ms-radial-gradient(center,ellipse cover,rgb(245,245,245),rgb(245,245,245));background-image:radial-gradient(ellipse at center,rgb(245,245,245),rgb(245,245,245))}#ajaxsearchprores1_1 .results .item .asp_image,#ajaxsearchprores1_2 .results .item .asp_image,div.asp_r.asp_r_1 .results .item .asp_image{background-size:cover;background-repeat:no-repeat}#ajaxsearchprores1_1 .results .item .asp_image img,#ajaxsearchprores1_2 .results .item .asp_image img,div.asp_r.asp_r_1 .results .item .asp_image img{object-fit:cover}#ajaxsearchprores1_1 .results .item .asp_item_overlay_img,#ajaxsearchprores1_2 .results .item .asp_item_overlay_img,div.asp_r.asp_r_1 .results .item .asp_item_overlay_img{background-size:cover;background-repeat:no-repeat}#ajaxsearchprores1_1 .results .item .asp_content,#ajaxsearchprores1_2 .results .item .asp_content,div.asp_r.asp_r_1 .results .item .asp_content{overflow:hidden;background:transparent;margin:0;padding:0 10px}#ajaxsearchprores1_1 .results .item .asp_content h3,#ajaxsearchprores1_2 .results .item .asp_content h3,div.asp_r.asp_r_1 .results .item .asp_content h3{margin:0;padding:0;display:inline-block;line-height:inherit;font-weight:bold;font-family:"Open Sans";color:rgba(20,84,169,1);font-size:14px;line-height:20px;text-shadow:none}#ajaxsearchprores1_1 .results .item .asp_content h3 a,#ajaxsearchprores1_2 .results .item .asp_content h3 a,div.asp_r.asp_r_1 .results .item .asp_content h3 a{margin:0;padding:0;line-height:inherit;display:block;font-weight:bold;font-family:"Open Sans";color:rgba(20,84,169,1);font-size:14px;line-height:20px;text-shadow:none}#ajaxsearchprores1_1 .results .item .asp_content h3 a:hover,#ajaxsearchprores1_2 .results .item .asp_content h3 a:hover,div.asp_r.asp_r_1 .results .item .asp_content h3 a:hover{font-weight:bold;font-family:"Open Sans";color:rgba(20,84,169,1);font-size:14px;line-height:20px;text-shadow:none}#ajaxsearchprores1_1 .results .item div.etc,#ajaxsearchprores1_2 .results .item div.etc,div.asp_r.asp_r_1 .results .item div.etc{padding:0;font-size:13px;line-height:1.3em;margin-bottom:6px}#ajaxsearchprores1_1 .results .item .etc .asp_author,#ajaxsearchprores1_2 .results .item .etc .asp_author,div.asp_r.asp_r_1 .results .item .etc .asp_author{padding:0;font-weight:bold;font-family:"Open Sans";color:rgba(161,161,161,1);font-size:12px;line-height:13px;text-shadow:none}#ajaxsearchprores1_1 .results .item .etc .asp_date,#ajaxsearchprores1_2 .results .item .etc .asp_date,div.asp_r.asp_r_1 .results .item .etc .asp_date{margin:0 0 0 10px;padding:0;font-weight:normal;font-family:"Open Sans";color:rgba(173,173,173,1);font-size:12px;line-height:15px;text-shadow:none}#ajaxsearchprores1_1 .results .item div.asp_content,#ajaxsearchprores1_2 .results .item div.asp_content,div.asp_r.asp_r_1 .results .item div.asp_content{margin:0;padding:0;font-weight:normal;font-family:"Open Sans";color:rgba(74,74,74,1);font-size:13px;line-height:13px;text-shadow:none}#ajaxsearchprores1_1 span.highlighted,#ajaxsearchprores1_2 span.highlighted,div.asp_r.asp_r_1 span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}#ajaxsearchprores1_1 p.showmore,#ajaxsearchprores1_2 p.showmore,div.asp_r.asp_r_1 p.showmore{text-align:center;font-weight:normal;font-family:"Open Sans";color:rgba(5,94,148,1);font-size:12px;line-height:15px;text-shadow:none}#ajaxsearchprores1_1 p.showmore a,#ajaxsearchprores1_2 p.showmore a,div.asp_r.asp_r_1 p.showmore a{font-weight:normal;font-family:"Open Sans";color:rgba(5,94,148,1);font-size:12px;line-height:15px;text-shadow:none;padding:10px 5px;margin:0 auto;background:rgba(255,255,255,1);display:block;text-align:center}#ajaxsearchprores1_1 .asp_res_loader,#ajaxsearchprores1_2 .asp_res_loader,div.asp_r.asp_r_1 .asp_res_loader{background:rgb(255,255,255);height:200px;padding:10px}#ajaxsearchprores1_1.isotopic .asp_res_loader,#ajaxsearchprores1_2.isotopic .asp_res_loader,div.asp_r.asp_r_1.isotopic .asp_res_loader{background:rgba(255,255,255,0);}#ajaxsearchprores1_1 .asp_res_loader .asp_loader,#ajaxsearchprores1_2 .asp_res_loader .asp_loader,div.asp_r.asp_r_1 .asp_res_loader .asp_loader{height:200px;width:200px;margin:0 auto}div.asp_s.asp_s_1.searchsettings,div.asp_s.asp_s_1.searchsettings,div.asp_s.asp_s_1.searchsettings{direction:ltr;padding:0;background-image:-webkit-linear-gradient(185deg,rgb(190,76,70),rgb(190,76,70));background-image:-moz-linear-gradient(185deg,rgb(190,76,70),rgb(190,76,70));background-image:-o-linear-gradient(185deg,rgb(190,76,70),rgb(190,76,70));background-image:-ms-linear-gradient(185deg,rgb(190,76,70) 0,rgb(190,76,70) 100%);background-image:linear-gradient(185deg,rgb(190,76,70),rgb(190,76,70));box-shadow:none;;max-width:208px;z-index:2}div.asp_s.asp_s_1.searchsettings.asp_s,div.asp_s.asp_s_1.searchsettings.asp_s,div.asp_s.asp_s_1.searchsettings.asp_s{z-index:11001}#ajaxsearchprobsettings1_1.searchsettings,#ajaxsearchprobsettings1_2.searchsettings,div.asp_sb.asp_sb_1.searchsettings{max-width:none}div.asp_s.asp_s_1.searchsettings form,div.asp_s.asp_s_1.searchsettings form,div.asp_s.asp_s_1.searchsettings form{display:flex}div.asp_sb.asp_sb_1.searchsettings form,div.asp_sb.asp_sb_1.searchsettings form,div.asp_sb.asp_sb_1.searchsettings form{display:flex}#ajaxsearchprosettings1_1.searchsettings div.asp_option_label,#ajaxsearchprosettings1_2.searchsettings div.asp_option_label,#ajaxsearchprosettings1_1.searchsettings .asp_label,#ajaxsearchprosettings1_2.searchsettings .asp_label,div.asp_s.asp_s_1.searchsettings div.asp_option_label,div.asp_s.asp_s_1.searchsettings .asp_label{font-weight:bold;font-family:"Open Sans";color:rgb(255,255,255);font-size:12px;line-height:15px;text-shadow:none}#ajaxsearchprosettings1_1.searchsettings .asp_option_inner .asp_option_checkbox,#ajaxsearchprosettings1_2.searchsettings .asp_option_inner .asp_option_checkbox,div.asp_sb.asp_sb_1.searchsettings .asp_option_inner .asp_option_checkbox,div.asp_s.asp_s_1.searchsettings .asp_option_inner .asp_option_checkbox{background-image:-webkit-linear-gradient(180deg,rgb(34,34,34),rgb(69,72,77));background-image:-moz-linear-gradient(180deg,rgb(34,34,34),rgb(69,72,77));background-image:-o-linear-gradient(180deg,rgb(34,34,34),rgb(69,72,77));background-image:-ms-linear-gradient(180deg,rgb(34,34,34) 0,rgb(69,72,77) 100%);background-image:linear-gradient(180deg,rgb(34,34,34),rgb(69,72,77))}#ajaxsearchprosettings1_1.searchsettings .asp_option_inner .asp_option_checkbox:after,#ajaxsearchprosettings1_2.searchsettings .asp_option_inner .asp_option_checkbox:after,#ajaxsearchprobsettings1_1.searchsettings .asp_option_inner .asp_option_checkbox:after,#ajaxsearchprobsettings1_2.searchsettings .asp_option_inner .asp_option_checkbox:after,div.asp_sb.asp_sb_1.searchsettings .asp_option_inner .asp_option_checkbox:after,div.asp_s.asp_s_1.searchsettings .asp_option_inner .asp_option_checkbox:after{font-family:'asppsicons2';border:none;content:"\e800";display:block;position:absolute;top:0;left:0;font-size:11px;color:rgb(255,255,255);margin:1px 0 0 0 !important;line-height:17px;text-align:center;text-decoration:none;text-shadow:none}div.asp_sb.asp_sb_1.searchsettings .asp_sett_scroll,div.asp_s.asp_s_1.searchsettings .asp_sett_scroll{scrollbar-width:thin;scrollbar-color:rgba(0,0,0,0.5) transparent}div.asp_sb.asp_sb_1.searchsettings .asp_sett_scroll::-webkit-scrollbar,div.asp_s.asp_s_1.searchsettings .asp_sett_scroll::-webkit-scrollbar{width:7px}div.asp_sb.asp_sb_1.searchsettings .asp_sett_scroll::-webkit-scrollbar-track,div.asp_s.asp_s_1.searchsettings .asp_sett_scroll::-webkit-scrollbar-track{background:transparent}div.asp_sb.asp_sb_1.searchsettings .asp_sett_scroll::-webkit-scrollbar-thumb,div.asp_s.asp_s_1.searchsettings .asp_sett_scroll::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.5);border-radius:5px;border:none}#ajaxsearchprosettings1_1.searchsettings .asp_sett_scroll,#ajaxsearchprosettings1_2.searchsettings .asp_sett_scroll,div.asp_s.asp_s_1.searchsettings .asp_sett_scroll{max-height:220px;overflow:auto}#ajaxsearchprobsettings1_1.searchsettings .asp_sett_scroll,#ajaxsearchprobsettings1_2.searchsettings .asp_sett_scroll,div.asp_sb.asp_sb_1.searchsettings .asp_sett_scroll{max-height:220px;overflow:auto}#ajaxsearchprosettings1_1.searchsettings fieldset,#ajaxsearchprosettings1_2.searchsettings fieldset,div.asp_s.asp_s_1.searchsettings fieldset{width:200px;min-width:200px;max-width:10000px}#ajaxsearchprobsettings1_1.searchsettings fieldset,#ajaxsearchprobsettings1_2.searchsettings fieldset,div.asp_sb.asp_sb_1.searchsettings fieldset{width:200px;min-width:200px;max-width:10000px}#ajaxsearchprosettings1_1.searchsettings fieldset legend,#ajaxsearchprosettings1_2.searchsettings fieldset legend,div.asp_s.asp_s_1.searchsettings fieldset legend{padding:0 0 0 10px;margin:0;background:transparent;font-weight:normal;font-family:"Open Sans";color:rgb(31,31,31);font-size:13px;line-height:15px;text-shadow:none}#ajaxsearchprores1_1.vertical,#ajaxsearchprores1_2.vertical,div.asp_r.asp_r_1.vertical{padding:4px;background:rgb(225,99,92);border-radius:3px;border:0 none rgba(0,0,0,1);border-radius:0;box-shadow:none;visibility:hidden;display:none}#ajaxsearchprores1_1.vertical .results,#ajaxsearchprores1_2.vertical .results,div.asp_r.asp_r_1.vertical .results{max-height:none;overflow-x:hidden;overflow-y:auto}#ajaxsearchprores1_1.vertical .item,#ajaxsearchprores1_2.vertical .item,div.asp_r.asp_r_1.vertical .item{position:relative;box-sizing:border-box}#ajaxsearchprores1_1.vertical .item .asp_content h3,#ajaxsearchprores1_2.vertical .item .asp_content h3,div.asp_r.asp_r_1.vertical .item .asp_content h3{display:inline}#ajaxsearchprores1_1.vertical .results .item .asp_content,#ajaxsearchprores1_2.vertical .results .item .asp_content,div.asp_r.asp_r_1.vertical .results .item .asp_content{overflow:hidden;width:auto;height:auto;background:transparent;margin:0;padding:8px}#ajaxsearchprores1_1.vertical .results .item .asp_image,#ajaxsearchprores1_2.vertical .results .item .asp_image,div.asp_r.asp_r_1.vertical .results .item .asp_image{width:70px;height:70px;margin:2px 8px 0 0}#ajaxsearchprores1_1.vertical .asp_simplebar-scrollbar::before,#ajaxsearchprores1_2.vertical .asp_simplebar-scrollbar::before,div.asp_r.asp_r_1.vertical .asp_simplebar-scrollbar::before{background:transparent;background-image:-moz-radial-gradient(center,ellipse cover,rgba(0,0,0,0.5),rgba(0,0,0,0.5));background-image:-webkit-gradient(radial,center center,0px,center center,100%,rgba(0,0,0,0.5),rgba(0,0,0,0.5));background-image:-webkit-radial-gradient(center,ellipse cover,rgba(0,0,0,0.5),rgba(0,0,0,0.5));background-image:-o-radial-gradient(center,ellipse cover,rgba(0,0,0,0.5),rgba(0,0,0,0.5));background-image:-ms-radial-gradient(center,ellipse cover,rgba(0,0,0,0.5),rgba(0,0,0,0.5));background-image:radial-gradient(ellipse at center,rgba(0,0,0,0.5),rgba(0,0,0,0.5))}#ajaxsearchprores1_1.vertical .results .item::after,#ajaxsearchprores1_2.vertical .results .item::after,div.asp_r.asp_r_1.vertical .results .item::after{display:block;position:absolute;bottom:0;content:"";height:1px;width:100%;background:rgba(204,204,204,1)}#ajaxsearchprores1_1.vertical .results .item.asp_last_item::after,#ajaxsearchprores1_2.vertical .results .item.asp_last_item::after,div.asp_r.asp_r_1.vertical .results .item.asp_last_item::after{display:none}.asp_spacer{display:none !important;}.asp_v_spacer{width:100%;height:0}#ajaxsearchprores1_1 .asp_group_header,#ajaxsearchprores1_2 .asp_group_header,div.asp_r.asp_r_1 .asp_group_header{background:#DDD;background:rgb(246,246,246);border-radius:3px 3px 0 0;border-top:1px solid rgb(248,248,248);border-left:1px solid rgb(248,248,248);border-right:1px solid rgb(248,248,248);margin:0 0 -3px;padding:7px 0 7px 10px;position:relative;z-index:1000;min-width:90%;flex-grow:1;font-weight:bold;font-family:"Open Sans";color:rgba(5,94,148,1);font-size:11px;line-height:13px;text-shadow:none}#ajaxsearchprores1_1.vertical .results,#ajaxsearchprores1_2.vertical .results,div.asp_r.asp_r_1.vertical .results{scrollbar-width:thin;scrollbar-color:rgba(0,0,0,0.5) rgb(255,255,255)}#ajaxsearchprores1_1.vertical .results::-webkit-scrollbar,#ajaxsearchprores1_2.vertical .results::-webkit-scrollbar,div.asp_r.asp_r_1.vertical .results::-webkit-scrollbar{width:10px}#ajaxsearchprores1_1.vertical .results::-webkit-scrollbar-track,#ajaxsearchprores1_2.vertical .results::-webkit-scrollbar-track,div.asp_r.asp_r_1.vertical .results::-webkit-scrollbar-track{background:rgb(255,255,255);box-shadow:inset 0 0 12px 12px transparent;border:none}#ajaxsearchprores1_1.vertical .results::-webkit-scrollbar-thumb,#ajaxsearchprores1_2.vertical .results::-webkit-scrollbar-thumb,div.asp_r.asp_r_1.vertical .results::-webkit-scrollbar-thumb{background:transparent;box-shadow:inset 0 0 12px 12px rgba(0,0,0,0);border:solid 2px transparent;border-radius:12px}#ajaxsearchprores1_1.vertical:hover .results::-webkit-scrollbar-thumb,#ajaxsearchprores1_2.vertical:hover .results::-webkit-scrollbar-thumb,div.asp_r.asp_r_1.vertical:hover .results::-webkit-scrollbar-thumb{box-shadow:inset 0 0 12px 12px rgba(0,0,0,0.5)}@media(hover:none),(max-width:500px){#ajaxsearchprores1_1.vertical .results::-webkit-scrollbar-thumb,#ajaxsearchprores1_2.vertical .results::-webkit-scrollbar-thumb,div.asp_r.asp_r_1.vertical .results::-webkit-scrollbar-thumb{box-shadow:inset 0 0 12px 12px rgba(0,0,0,0.5)}}</style>
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+				<style>
+					@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4gaVc.ttf) format('truetype');
+}
+
+				</style></head>
+
+<body data-rsssl=1 class="page-template page-template-page-cuando-llega page-template-page-cuando-llega-php page page-id-18 page-child parent-pageid-16">
+	
+<div id="page-content">
+	<header class="header">
+		<!-- cabecera de redes socailes y call center -->
+		<div class="sg-header-0 mb-4">
+			<div class="row sg-row"> 
+				<div class="col-12 red-header">
+					<ul class="telefonos-header">
+						<li><img class="img-fluid" src="https://www.red.cl/wp-content/themes/red/images/iconos/telefono-blanco.png" alt="Ícono representando un teléfono" /></li>
+						<li class="sg-li"><a href="tel:600 730 0073" title="Llamar al número 600 730 0073">600 730 0073</a> / </li>
+						<li><a class="sg-li-a" href="tel:800 73 0073" title="Llamar al número 800 73 0073">800 73 0073</a></li>
+					</ul>
+
+					<ul class="social sg-social">
+						<li><a class="facebook" href="https://www.facebook.com/REDMetropolitanadeMovilidad" target="_blank" title="Ir al perfil de Facebook"><span>Facebook</span></a></li>
+						<li><a class="twitter" href="https://x.com/RED_movilidad/?mx=2" target="_blank" title="Ir al perfil de X"><span>Twitter</span></a></li>
+						<li><a class="instagram" href="https://www.instagram.com/red_movilidad/" target="_blank" title="Ir al perfil de Instagram"><span>Instagram</span></a></li>
+						<li><a class="youtube" href="https://www.youtube.com/channel/UCQ6P6Av1qvxy_CEFQYeV-sA/" target="_blank" title="Ir al perfil de Youtube"><span>Youtube</span></a></li>
+
+						<li><a class="tiktok" href="https://www.tiktok.com/@red_movilidad" target="_blank" title="Ir al perfil de TikTok"><span>TikTok</span></a></li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+										
+					
+					<span class="float-left d-none d-md-block">
+						<a href="https://www.red.cl/" title="Ir a la página de inicio" accesskey="0">
+							<img class="logotipo" src="https://www.red.cl/wp-content/themes/red/images/logotipo.png" alt="Logotipo de Red Metropolitana de Movilidad" />
+						</a>
+					</span>
+					
+					
+					<span class="float-left d-block d-md-none">
+						<a href="https://www.red.cl/" title="Ir a la página de inicio" accesskey="0">
+							<img class="logotipo2" src="https://www.red.cl/wp-content/themes/red/images/logotipo-footer.png" alt="Logotipo de Red Metropolitana de Movilidad" />
+						</a>
+					</span>
+					
+					
+					<div class="float-right iconos sg-flex">
+
+						<a class="favorito menu-favorito openMenuFavoritos" href="#favoritos" title="Abrir el menú lateral de mis favoritos" aria-label="Abrir el menú lateral de mis favoritos"><span class="hidden-xs">Ver mis favoritos</span></a>
+
+						<div class="vr mx-2 sg-divider"></div>
+
+						<a class="noticias btn sg-btn " href="/red-comunica/noticias/" title="Abrir página de noticias" aria-label="Abrir página de noticias"><span class="hidden-xs ">Noticias</span><img class="icon-noticias d-block d-md-none" src="https://www.red.cl/wp-content/themes/red/images/iconos/newspaper-red-regular.png" alt="Ícono de noticias" /></a>
+						
+						<div class="search-wrap">
+							<div class="asp_w_container asp_w_container_1 asp_w_container_1_1" data-id="1" data-instance="1"><div class='asp_w asp_m asp_m_1 asp_m_1_1 wpdreams_asp_sc wpdreams_asp_sc-1 ajaxsearchpro asp_main_container asp_non_compact' data-id="1" data-name="[wpdreams_ajaxsearchlite]" data-instance="1" id='ajaxsearchpro1_1'><div class="probox"><div class='prosettings' style='display:none;' data-opened=0><div class='innericon'><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 512 512"><path d="M170 294c0 33.138-26.862 60-60 60-33.137 0-60-26.862-60-60 0-33.137 26.863-60 60-60 33.138 0 60 26.863 60 60zm-60 90c-6.872 0-13.565-.777-20-2.243V422c0 11.046 8.954 20 20 20s20-8.954 20-20v-40.243c-6.435 1.466-13.128 2.243-20 2.243zm0-180c6.872 0 13.565.777 20 2.243V90c0-11.046-8.954-20-20-20s-20 8.954-20 20v116.243c6.435-1.466 13.128-2.243 20-2.243zm146-7c12.13 0 22 9.87 22 22s-9.87 22-22 22-22-9.87-22-22 9.87-22 22-22zm0-38c-33.137 0-60 26.863-60 60 0 33.138 26.863 60 60 60 33.138 0 60-26.862 60-60 0-33.137-26.862-60-60-60zm0-30c6.872 0 13.565.777 20 2.243V90c0-11.046-8.954-20-20-20s-20 8.954-20 20v41.243c6.435-1.466 13.128-2.243 20-2.243zm0 180c-6.872 0-13.565-.777-20-2.243V422c0 11.046 8.954 20 20 20s20-8.954 20-20V306.757c-6.435 1.466-13.128 2.243-20 2.243zm146-75c-33.137 0-60 26.863-60 60 0 33.138 26.863 60 60 60 33.138 0 60-26.862 60-60 0-33.137-26.862-60-60-60zm0-30c6.872 0 13.565.777 20 2.243V90c0-11.046-8.954-20-20-20s-20 8.954-20 20v116.243c6.435-1.466 13.128-2.243 20-2.243zm0 180c-6.872 0-13.565-.777-20-2.243V422c0 11.046 8.954 20 20 20s20-8.954 20-20v-40.243c-6.435 1.466-13.128 2.243-20 2.243z"/></svg></div></div><div class='proinput'><form role="search" action='#' autocomplete="off" aria-label="Search form"><input type='search' class='orig' placeholder='Buscar...' name='phrase' value='' aria-label="Search input" autocomplete="off"/><input type='text' class='autocomplete' name='phrase' value='' aria-label="Search autocomplete input" aria-hidden="true" tabindex="-1" autocomplete="off" disabled/><button type="submit" hidden ></button></form></div><button class='promagnifier' aria-label="Search magnifier button"><span class='asp_text_button hiddend'> Search </span><span class='innericon'><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 512 512"><path d="M460.355 421.59l-106.51-106.512c20.04-27.553 31.884-61.437 31.884-98.037C385.73 124.935 310.792 50 218.685 50c-92.106 0-167.04 74.934-167.04 167.04 0 92.107 74.935 167.042 167.04 167.042 34.912 0 67.352-10.773 94.184-29.158L419.945 462l40.41-40.41zM100.63 217.04c0-65.095 52.96-118.055 118.056-118.055 65.098 0 118.057 52.96 118.057 118.056 0 65.097-52.96 118.057-118.057 118.057-65.096 0-118.055-52.96-118.055-118.056z"/></svg></span><span class="asp_clear"></span></button><div class='proloading'><div class="asp_loader"><div class="asp_loader-inner asp_simple-circle"></div></div></div><div class='proclose'><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/></svg></div></div></div><div class='asp_data_container' style="display:none !important;"><div class="asp_init_data" style="display:none !important;" id="asp_init_id_1_1" data-asp-id="1" data-asp-instance="1" data-aspdata="eyJob21ldXJsIjoiaHR0cHM6XC9cL3d3dy5yZWQuY2xcLyIsImlzX3Jlc3VsdHNfcGFnZSI6MCwicmVzdWx0c3R5cGUiOiJ2ZXJ0aWNhbCIsInJlc3VsdHNwb3NpdGlvbiI6ImhvdmVyIiwicmVzdWx0c1NuYXBUbyI6ImxlZnQiLCJyZXN1bHRzIjp7IndpZHRoIjoiYXV0byIsIndpZHRoX3RhYmxldCI6ImF1dG8iLCJ3aWR0aF9waG9uZSI6ImF1dG8ifSwiaXRlbXNjb3VudCI6NCwiY2hhcmNvdW50IjowLCJoaWdobGlnaHQiOjAsImhpZ2hsaWdodFdob2xld29yZHMiOjEsInNpbmdsZUhpZ2hsaWdodCI6MCwic2Nyb2xsVG9SZXN1bHRzIjp7ImVuYWJsZWQiOjEsIm9mZnNldCI6MH0sImF1dG9jb21wbGV0ZSI6eyJlbmFibGVkIjoxLCJ0cmlnZ2VyX2NoYXJjb3VudCI6MCwiZ29vZ2xlT25seSI6MSwibGFuZyI6ImVuIiwibW9iaWxlIjoxfSwidHJpZ2dlciI6eyJkZWxheSI6MzAwLCJhdXRvY29tcGxldGVfZGVsYXkiOjMxMCwidXBkYXRlX2hyZWYiOjAsImZhY2V0IjoxLCJ0eXBlIjoxLCJjbGljayI6ImN1c3RvbV91cmwiLCJjbGlja19sb2NhdGlvbiI6InNhbWUiLCJyZXR1cm4iOiJjdXN0b21fdXJsIiwicmV0dXJuX2xvY2F0aW9uIjoic2FtZSIsInJlZGlyZWN0X3VybCI6InJlc3VsdGFkb3NcLz9hc3Bfcz17cGhyYXNlfSIsImVsZW1lbnRvcl91cmwiOiJodHRwczpcL1wvd3d3LnJlZC5jbFwvP2FzcF9scz17cGhyYXNlfSJ9LCJvdmVycmlkZXdwZGVmYXVsdCI6MCwib3ZlcnJpZGVfbWV0aG9kIjoiZ2V0Iiwic2V0dGluZ3MiOnsidW5zZWxlY3RDaGlsZHJlbiI6MSwiaGlkZUNoaWxkcmVuIjowfSwic2V0dGluZ3NpbWFnZXBvcyI6InJpZ2h0Iiwic2V0dGluZ3NWaXNpYmxlIjowLCJzZXR0aW5nc0hpZGVPblJlcyI6MCwicHJlc2NvbnRhaW5lcmhlaWdodCI6IjQwMHB4IiwiY2xvc2VPbkRvY0NsaWNrIjoxLCJmb2N1c09uUGFnZWxvYWQiOjAsImlzb3RvcGljIjp7Iml0ZW1XaWR0aCI6IjIwMHB4IiwiaXRlbVdpZHRoVGFibGV0IjoiMjAwcHgiLCJpdGVtV2lkdGhQaG9uZSI6IjIwMHB4IiwiaXRlbUhlaWdodCI6IjIwMHB4IiwiaXRlbUhlaWdodFRhYmxldCI6IjIwMHB4IiwiaXRlbUhlaWdodFBob25lIjoiMjAwcHgiLCJwYWdpbmF0aW9uIjoxLCJyb3dzIjoyLCJndXR0ZXIiOjUsInNob3dPdmVybGF5IjoxLCJibHVyT3ZlcmxheSI6MSwiaGlkZUNvbnRlbnQiOjF9LCJsb2FkZXJMb2NhdGlvbiI6ImF1dG8iLCJzaG93X21vcmUiOnsiZW5hYmxlZCI6MCwidXJsIjoiP3M9e3BocmFzZX0iLCJlbGVtZW50b3JfdXJsIjoiaHR0cHM6XC9cL3d3dy5yZWQuY2xcLz9hc3BfbHM9e3BocmFzZX0iLCJhY3Rpb24iOiJhamF4IiwibG9jYXRpb24iOiJzYW1lIiwiaW5maW5pdGUiOjF9LCJtb2JpbGUiOnsidHJpZ2dlcl9vbl90eXBlIjoxLCJjbGlja19hY3Rpb24iOiJjdXN0b21fdXJsIiwicmV0dXJuX2FjdGlvbiI6ImN1c3RvbV91cmwiLCJjbGlja19hY3Rpb25fbG9jYXRpb24iOiJzYW1lIiwicmV0dXJuX2FjdGlvbl9sb2NhdGlvbiI6InNhbWUiLCJyZWRpcmVjdF91cmwiOiJyZXN1bHRhZG9zXC8/YXNwX3M9e3BocmFzZX0iLCJlbGVtZW50b3JfdXJsIjoiaHR0cHM6XC9cL3d3dy5yZWQuY2xcLz9hc3BfbHM9e3BocmFzZX0iLCJtZW51X3NlbGVjdG9yIjoiI21lbnUtdG9nZ2xlIiwiaGlkZV9rZXlib2FyZCI6MCwiZm9yY2VfcmVzX2hvdmVyIjowLCJmb3JjZV9zZXR0X2hvdmVyIjowLCJmb3JjZV9zZXR0X3N0YXRlIjoibm9uZSJ9LCJjb21wYWN0Ijp7ImVuYWJsZWQiOjAsImZvY3VzIjoxLCJ3aWR0aCI6IjEwMCUiLCJ3aWR0aF90YWJsZXQiOiI0ODBweCIsIndpZHRoX3Bob25lIjoiMzIwcHgiLCJjbG9zZU9uTWFnbmlmaWVyIjoxLCJjbG9zZU9uRG9jdW1lbnQiOjAsInBvc2l0aW9uIjoic3RhdGljIiwib3ZlcmxheSI6MH0sInNiIjp7InJlZGlyZWN0X2FjdGlvbiI6ImFqYXhfc2VhcmNoIiwicmVkaXJlY3RfbG9jYXRpb24iOiJzYW1lIiwicmVkaXJlY3RfdXJsIjoiP3M9e3BocmFzZX0iLCJlbGVtZW50b3JfdXJsIjoiaHR0cHM6XC9cL3d3dy5yZWQuY2xcLz9hc3BfbHM9e3BocmFzZX0ifSwicmIiOnsiYWN0aW9uIjoibm90aGluZyJ9LCJhbmltYXRpb25zIjp7InBjIjp7InNldHRpbmdzIjp7ImFuaW0iOiJmYWRlZHJvcCIsImR1ciI6MzAwfSwicmVzdWx0cyI6eyJhbmltIjoiZmFkZWRyb3AiLCJkdXIiOjMwMH0sIml0ZW1zIjoiZmFkZUluRG93biJ9LCJtb2IiOnsic2V0dGluZ3MiOnsiYW5pbSI6ImZhZGVkcm9wIiwiZHVyIjozMDB9LCJyZXN1bHRzIjp7ImFuaW0iOiJmYWRlZHJvcCIsImR1ciI6MzAwfSwiaXRlbXMiOiJ2b2lkYW5pbSJ9fSwic2VsZWN0MiI6eyJub3JlcyI6Ik5vIHJlc3VsdHMgbWF0Y2gifSwiZGV0ZWN0VmlzaWJpbGl0eSI6MCwiYXV0b3AiOnsic3RhdGUiOiJkaXNhYmxlZCIsInBocmFzZSI6IiIsImNvdW50IjoxMH0sIndvb1Nob3AiOnsidXNlQWpheCI6MCwic2VsZWN0b3IiOiIjbWFpbiIsInVybCI6IiJ9LCJ0YXhBcmNoaXZlIjp7InVzZUFqYXgiOjAsInNlbGVjdG9yIjoiI21haW4iLCJ1cmwiOiIifSwiY3B0QXJjaGl2ZSI6eyJ1c2VBamF4IjowLCJzZWxlY3RvciI6IiNtYWluIiwidXJsIjoiIn0sInJlc1BhZ2UiOnsidXNlQWpheCI6MCwic2VsZWN0b3IiOiIjbWFpbiIsInRyaWdnZXJfdHlwZSI6MSwidHJpZ2dlcl9mYWNldCI6MSwidHJpZ2dlcl9tYWduaWZpZXIiOjAsInRyaWdnZXJfcmV0dXJuIjowfSwiZnNzX2xheW91dCI6ImZsZXgiLCJzY3JvbGxCYXIiOnsiaG9yaXpvbnRhbCI6eyJlbmFibGVkIjoxfX0sImRpdmkiOnsiYm9keWNvbW1lcmNlIjowfSwicHJldmVudEJvZHlTY3JvbGwiOjAsInN0YXRpc3RpY3MiOjAsInByZXZlbnRFdmVudHMiOjB9"></div><div class='asp_hidden_data' style="display:none !important;"><div class='asp_item_overlay'><div class='asp_item_inner'><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 512 512"><path d="M448.225 394.243l-85.387-85.385c16.55-26.08 26.146-56.986 26.146-90.094 0-92.99-75.652-168.64-168.643-168.64-92.988 0-168.64 75.65-168.64 168.64s75.65 168.64 168.64 168.64c31.466 0 60.94-8.67 86.176-23.734l86.14 86.142c36.755 36.754 92.355-18.783 55.57-55.57zm-344.233-175.48c0-64.155 52.192-116.35 116.35-116.35s116.353 52.194 116.353 116.35S284.5 335.117 220.342 335.117s-116.35-52.196-116.35-116.352zm34.463-30.26c34.057-78.9 148.668-69.75 170.248 12.863-43.482-51.037-119.984-56.532-170.248-12.862z"/></svg></div></div></div></div><div id='__original__ajaxsearchprores1_1' class='asp_w asp_r asp_r_1 asp_r_1_1 vertical ajaxsearchpro wpdreams_asp_sc wpdreams_asp_sc-1' data-id="1" data-instance="1"><div class="results"><div class="resdrg"></div></div><div class="asp_res_loader hiddend"><div class="asp_loader"><div class="asp_loader-inner asp_simple-circle"></div></div></div></div><div id='__original__ajaxsearchprosettings1_1' class="asp_w asp_ss asp_ss_1 asp_s asp_s_1 asp_s_1_1 wpdreams_asp_sc wpdreams_asp_sc-1 ajaxsearchpro searchsettings" data-id="1" data-instance="1"><form name='options' class="asp-fss-flex" aria-label="Search settings form" autocomplete = 'off'><input type="hidden" name="current_page_id" value="18"><input type='hidden' name='qtranslate_lang' value='0'/><input type='hidden' name='wpml_lang' value='es'/><input type="hidden" name="filters_changed" value="0"><input type="hidden" name="filters_initial" value="1"><fieldset class="asp_filter_generic asp_filter_id_1 asp_filter_n_0"><legend>Generic filters</legend><div class="asp_option" tabindex="0"><div class="asp_option_inner"><input type="checkbox" value="exact" id="set_exact1_1" aria-label="Exact matches only" name="asp_gen[]" /><div class="asp_option_checkbox"></div></div><div class="asp_option_label"> Exact matches only </div></div><div class="asp_option" tabindex="0"><div class="asp_option_inner"><input type="checkbox" value="title" id="set_title1_1" data-origvalue="1" aria-label="Search in title" name="asp_gen[]" checked="checked"/><div class="asp_option_checkbox"></div></div><div class="asp_option_label"> Search in title </div></div><div class="asp_option" tabindex="0"><div class="asp_option_inner"><input type="checkbox" value="content" id="set_content1_1" data-origvalue="1" aria-label="Search in content" name="asp_gen[]" checked="checked"/><div class="asp_option_checkbox"></div></div><div class="asp_option_label"> Search in content </div></div><div class="asp_option" tabindex="0"><div class="asp_option_inner"><input type="checkbox" value="excerpt" id="set_excerpt1_1" data-origvalue="1" aria-label="Search in excerpt" name="asp_gen[]" checked="checked"/><div class="asp_option_checkbox"></div></div><div class="asp_option_label"> Search in excerpt </div></div></fieldset><div style="clear:both;"></div><button type="submit" hidden ></button></form></div></div> 
+						</div>
+
+						<a class="navbar-toggle openMenu" href="#menuprincipal" data-target="#main_menu" data-toggle="collapse" title="Abrir el menú principal de navegación" aria-label="Abrir el menú principal de navegación"><img src="https://www.red.cl/wp-content/themes/red/images/iconos/menu-abrir-rojo.png" alt="Abrir menú" /></a>                    
+					</div>
+				</div>
+			</div>
+		</div>
+	</header><script type="text/javascript">
+var desvios = [
+    "J10",
+    "504",
+    "505",
+    "508",
+    "514",
+    "J04",
+    "J05",
+    "J15c",
+    "J20",
+    "119",
+    "121",
+    "401",
+    "401c",
+    "501",
+    "504",
+    "518",
+    "C03",
+    "C03c",
+    "c06",
+    "C13",
+    "444",
+    "508",
+    "J07",
+    "J07e",
+    "J18",
+    "502",
+    "502c",
+    "542",
+    "B28",
+    "J05",
+    "J08",
+    "223",
+    "444",
+    "482",
+    "482e",
+    "G01",
+    "G01c",
+    "g12",
+    "G34",
+    "I03",
+    "I10",
+    "I10n",
+    "B24",
+    "B28",
+    "B38",
+    "402",
+    "406",
+    "407",
+    "412",
+    "422",
+    "422c",
+    "426",
+    "486",
+    "511",
+    "541n",
+    "j01",
+    "J01c",
+    "J08",
+    "j13",
+    "J13c",
+    "J18",
+    "J18c",
+    "505",
+    "510",
+    "513",
+    "516",
+    "D03",
+    "D03c",
+    "D07",
+    "D15",
+    "385",
+    "511",
+    "514",
+    "J10",
+    "J19",
+    "502",
+    "511",
+    "J04",
+    "J05",
+    "J15c",
+    "J20",
+    "G07",
+    "G14",
+    "G16",
+    "G24",
+    "G31",
+    "G38",
+    "G39",
+    "G43",
+    "G05",
+    "G35",
+    "422",
+    "505",
+    "510",
+    "513",
+    "516",
+    "D03",
+    "D03c",
+    "D07",
+    "D10",
+    "D15",
+    null,
+    "419",
+    "432n",
+    "I07",
+    "I09e",
+    "121",
+    "329",
+    "H06",
+    "H12",
+    "B09",
+    "B28",
+    "J08",
+    "424",
+    "j01",
+    "J19",
+    "B08",
+    "405",
+    "405c",
+    "445c",
+    "C03",
+    "C33c",
+    "201",
+    "230",
+    "264n",
+    "272",
+    "308",
+    "B01",
+    "B22",
+    "110",
+    "110c",
+    "B03",
+    "209",
+    "209c",
+    "207",
+    "207c",
+    "555",
+    "I25",
+    "j01",
+    "J19",
+    "203"
+];
+</script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+<div id="content-page">
+        <div class="container">
+        <hr class="sg-divider-2">
+            <!-- Ruta de migas -->
+            <div class="ruta-migas">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb"><li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.red.cl/planifica-tu-viaje/" itemprop="url">Planifica tu viaje</a></li></ol>                </nav>
+            </div>
+            <div class="loader-container">
+                <div class="loader">
+                    <img src="https://www.red.cl/wp-content/themes/red/images/loader01.gif" class="fluid-img" alt="Representación animada de una imagen de carga"> Cargando...                </div>
+                <div class="loader-white">
+                    <!-- Título de la pagina -->
+                    <div class="bloque-titular-pagina">
+                         <h1>Paradero...</h1>
+
+                        <!-- Buscador -->
+                        <div class="buscador-encabezado show-hide">
+                            <a href="javascript:void(0)" class="link-show-div" id="showFilter"><img src="https://www.red.cl/wp-content/themes/red/images/iconos/buscar-rojo.png" alt="Buscar" /></a>
+                            <div id="show-hide-div">
+                                <div class="bloque-filtros">
+                                    <label for="selectparadero" class="hidden">Buscar otro paradero</label> 
+                                    <select id="selectparadero" class="selectpicker btn-cuando-llega" name="codsimt" data-live-search="true" title="Buscar otro paradero">
+                                      <option data-tokens="PA100">Cargando...</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subencabezado -->
+                    <div class="subencabezado" accesskey="s">
+                        <div class="paradero">...</div>
+                        <h2 class="nombre-parada">Cargando...</h2>
+                        <div class="acciones">
+                            <a href="#favoritos" data-paradero="" class="agregar-paradero paradero- favorito-anadir" href="#favoritos" title="Añadir a favoritos"><span class="hidden">Añadir a favoritos</span></a>
+                        </div>
+                        <div class="mas-info">
+                            <p class="hora-prediccion mr-5"></p>
+                        </div>
+                    </div>
+
+                    <!-- Mapa -->
+                    <section class="bloque-mapa">
+                        <div class="container">
+                            <div class="row justify-content-sm-center">
+                                <div class="col-12 col-sm-12 col-md-11">
+                                    <a class="btn-mapa" href="#collapseMapa" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseMapa" data-long="" data-lat="" title="Ver ubicación en mapa"><img src="https://www.red.cl/wp-content/themes/red/images/iconos/map-rojo.png" alt="Imagen que representa un icono marcador de indicación en un mapa"> <span>Ver mapa</span></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="collapse" id="collapseMapa">
+                                        <div class="card card-body">
+                                            <div id="map" class="mapa"><img src="https://www.red.cl/wp-content/themes/red/images/loader.gif" class="loader" alt="Ícono circular animado que representa el tiempo de espera durante la carga del contenido"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Pestañas Paradas / Recorridos -->
+                    <section class="bloque-paraderos">
+                        <div class="row justify-content-sm-center">
+                            <div class="col-12 col-sm-12 col-md-11">
+                                <nav class="recorridos">
+                                    <div class="dropdown nav nav-tabs recorrido-seleccionado" id="nav-tab" role="tablist">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownRecorridos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Todos los recorridos</button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownRecorridos">
+                                            <a class="dropdown-item nav-item nav-link active" id="nav-00-tab" data-toggle="tab" href="#nav-00" role="tab" aria-controls="nav-00" aria-selected="true" title="Mostrar todos los recorridos">
+                                                <div class="tab-todos">Todos los recorridos</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </nav>
+
+                                <div class="tab-content" id="nav-tabRecorridos">
+                                    <!-- TABLA PESTAÑA #00 -->
+                                    <div class="tab-pane fade show active" id="nav-00" aria-labelledby="nav-00-tab">
+                                        <div class="table-responsive">
+                                            <table class="table tabla-liquida tabla-paradero">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" class="td-dividido recorrido no-icon" nowrap>Recorrido</th>
+                                                        <th scope="col" class="td-dividido td-dividido-last" nowrap>Dirección</th>
+                                                        <th scope="col" class="td-dividido td-dividido-last incidencia"><span class="hidden">Desvíos</span></th>
+                                                        <th scope="col" class="td-right tiempo-llegada">Tiempo de llegada</th>
+                                                        <th scope="col" class="td-right-last" nowrap><span class="hidden">Enlace</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+                             <section class="bloque-relacionados">
+    <h2 class="titular">También te puede interesar...</h2>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4">
+                        <a href="/mapas-y-horarios/" class="banner-relacionado banner-rojo" title="Mapas y Horarios" >
+                <div class="imagen"><img src="https://www.red.cl/wp-content/uploads/2020/12/destacado-cerca-de-mi-380x300.jpg" class="img-fluid" alt="Chinchetas sobre un mapa" /></div>
+                <div class="datos">
+                    <h3>Mapas y Horarios</h3>
+                    <p>Conoce los mapas y horarios de Bus, Metro y Metrotren Nos de Santiago.</p>
+                    <div class="enlace">Ver mapas y horarios <img src="https://www.red.cl/wp-content/themes/red/images/iconos/flecha-dcha-blanco.png" alt="Ícono representando una flecha hacia la derecha"></div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4">
+                        <a href="/wp-content/uploads/2021/01/plan-operacional-enero-2021.pdf" class="banner-relacionado banner-gris" title="Plan Operacional enero 2021" target="_blank">
+                <div class="imagen"><img src="https://www.red.cl/wp-content/uploads/2020/12/planorperacional.gif" class="img-fluid" alt="ícono que representa un recorrido" /></div>
+                <div class="datos">
+                    <h3>Plan Operacional enero 2021</h3>
+                    <p>Infórmate aquí cuáles recorridos modificaron sus trazados.</p>                    <div class="enlace">Más información <img src="https://www.red.cl/wp-content/themes/red/images/iconos/flecha-dcha-rojo.png" alt="Ícono representando una flecha hacia la derecha"></div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4">
+                        <a href="/acerca-de-red/app-red/" class="banner-relacionado banner-rojo" title="App de Red" >
+                <div class="imagen"><img src="https://www.red.cl/wp-content/uploads/2020/12/distributiva-app-movil-380x300.jpg" class="img-fluid" alt="Persona manejando un smartphone" /></div>
+                <div class="datos">
+                    <h3>App de Red</h3>
+                    <p>Ya está disponible nuestra App móvil en App Store y Google Play. Encuéntrala como Red Metropolitana.</p>
+                    <div class="enlace">Más información <img src="https://www.red.cl/wp-content/themes/red/images/iconos/flecha-dcha-blanco.png" alt="Ícono representando una flecha hacia la derecha"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>                        
+        </div>  
+    </div>
+    <script src="https://www.red.cl/wp-content/themes/red/js/detalle-paradero.js?2"></script>
+    <script src="https://www.red.cl/wp-content/themes/red/js/mapas/iniciar-mapa.js"></script>
+    <script>
+    $jwt = 'ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SmxlSEFpT2pFM056WTVOek0zTnpSOS42cUFUaGxTT0xfcmZ2cFdSSWhzNjV4eGVPZ2NzWS1VUGFEMXk2YlR1b2FF';
+    $codsimt = '';
+    $codsimt = $codsimt.toUpperCase();
+    var rutaTheme = 'https://www.red.cl/wp-content/themes/red';
+    consultaParadero($jwt,$codsimt, desvios);
+    </script>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 franja-roja">
+                    <ul class="telefonos">
+                        <li><img class="img-fluid" src="https://www.red.cl/wp-content/themes/red/images/iconos/telefono-blanco.png" alt="Ícono representando un teléfono" /></li>
+                        <li><a href="tel:600 730 0073" title="Llamar al número 600 730 0073">600 730 0073</a> / </li>
+                        <li><a href="tel:800 73 0073" title="Llamar al número 800 73 0073">800 73 0073</a></li>
+                    </ul>
+                    <ul class="enlaces">
+                        <li><a href="https://atencion.red.cl/support/home/" title="Ir a la página de reclamos y sugerencias" target="_blank" accesskey="r">Reclamos y sugerencias</a></li>
+                        <li><a href="/ayuda-y-contacto/preguntas-frecuentes/" title="Ir a la página de  preguntas frecuentes" accesskey="p">Preguntas frecuentes</a></li>
+                    </ul>
+                    <ul class="social">
+                        <li><a class="facebook" href="https://www.facebook.com/REDMetropolitanadeMovilidad" target="_blank" title="Ir al perfil de Facebook"><span>Facebook</span></a></li>
+                        <li><a class="twitter" href="https://x.com/RED_movilidad/?mx=2" target="_blank" title="Ir al perfil de X"><span>Twitter</span></a></li>
+                        <li><a class="instagram" href="https://www.instagram.com/red_movilidad/" target="_blank" title="Ir al perfil de Instagram"><span>Instagram</span></a></li>
+                        <li><a class="youtube" href="https://www.youtube.com/channel/UCQ6P6Av1qvxy_CEFQYeV-sA/" target="_blank" title="Ir al perfil de Youtube"><span>Youtube</span></a></li>
+
+                        <li><a class="tiktok" href="https://www.tiktok.com/@red_movilidad" target="_blank" title="Ir al perfil de TikTok"><span>TikTok</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 legales">
+                    <img class="logotipo" src="https://www.red.cl/wp-content/themes/red/images/logotipo-footer.png" alt="Logotipo de la Red Metropolitana de Movilidad" />
+                    <ul class="enlaces">
+                        <li><a href="/condiciones-de-uso-y-privacidad/" title="Ir a la página de condiciones de uso y privacidad" accesskey="8">Condiciones de uso y privacidad</a></li>
+                        <li><a href="/accesibilidad-web/" title="Ir a la página de accesibilidad web" accesskey="9">Accesibilidad web</a></li>
+                    </ul>
+                    <div class="float-right">
+                        <a class="transporte-logo" href="http://www.mtt.gob.cl/" title="Ir a la página externa del Ministerio de transporte y telecomunicaciones" target="_blank"><img class="img-fluid" src="https://www.red.cl/wp-content/themes/red/images/logotipo-footer-transporte.png" alt="Logotipo del Ministerio de transporte y telecomunicaciones"></a>
+                        <a class="dtpm-logo" href="http://www.dtpm.gob.cl/" title="Ir a la página externa del Directorio de Transporte Público Metropolitano" target="_blank"><img class="img-fluid" src="https://www.red.cl/wp-content/themes/red/images/logotipo-footer-dtpm.png" alt="Logotipo del Directorio de Transporte Público Metropolitano"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div class="modal-backdrop" id="backMenu" style="display:none"></div>
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="menuprincipal">
+    <h2 class="hidden">Menú principal</h2>
+    <a href="javascript:void(0)" class="cerrarMenu" title="Cerrar el menú principal"><img src="https://www.red.cl/wp-content/themes/red/images/iconos/menu-cerrar.png" alt="Ícono de cerrar" /></a>
+    <ul id="menu-menu-principal" class="menu-principal" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><li  id="menu-item-255" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-255 nav-item"><a accesskey="1" itemprop="url" href="https://www.red.cl/planifica-tu-viaje/" class="nav-link"><span itemprop="name">Planifica tu viaje</span></a></li>
+<li  id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56 nav-item"><a accesskey="2" itemprop="url" href="https://www.red.cl/estado-del-servicio/" class="nav-link"><span itemprop="name">Estado del servicio</span></a></li>
+<li  id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57 nav-item"><a accesskey="3" itemprop="url" href="https://www.red.cl/mapas-y-horarios/" class="nav-link"><span itemprop="name">Mapas y horarios</span></a></li>
+<li  id="menu-item-67" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67 nav-item"><a accesskey="4" itemprop="url" href="https://www.red.cl/tarifas-y-recargas/" class="nav-link"><span itemprop="name">Tarifas y recargas</span></a></li>
+<li  id="menu-item-42963" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42963 nav-item"><a itemprop="url" href="https://www.red.cl/red-comunica/" class="nav-link"><span itemprop="name">Red comunica</span></a></li>
+<li  id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55 nav-item"><a accesskey="6" itemprop="url" href="https://www.red.cl/ayuda-y-contacto/" class="nav-link"><span itemprop="name">Ayuda y contacto</span></a></li>
+<li  id="menu-item-306" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-306 nav-item"><a accesskey="7" itemprop="url" href="https://www.red.cl/acerca-de-red/" class="nav-link"><span itemprop="name">Acerca de red</span></a></li>
+<li  id="menu-item-wpml-ls-9-es" class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-es nav-item"><a itemprop="url" href="https://www.red.cl/planifica-tu-viaje/cuando-llega/" class="nav-link" aria-current="page"><span itemprop="name"><span class="wpml-ls-native" lang="es">Español</span></span></a></li>
+<li  id="menu-item-wpml-ls-9-en" class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-en nav-item"><a title="Cambiar a English" itemprop="url" href="https://www.red.cl/en/plan-your-trip/live-arrivals/" class="nav-link" aria-label="Cambiar a English"><span itemprop="name"><span class="wpml-ls-native" lang="en">English</span></span></a></li>
+<li  id="menu-item-wpml-ls-9-pt-br" class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-pt-br wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-pt-br nav-item"><a title="Cambiar a Português" itemprop="url" href="https://www.red.cl/pt-br/planeje-sua-viagem/quando-ele-chega/" class="nav-link" aria-label="Cambiar a Português"><span itemprop="name"><span class="wpml-ls-native" lang="pt-br">Português</span></span></a></li>
+<li  id="menu-item-wpml-ls-9-fr" class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-fr wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-fr nav-item"><a title="Cambiar a Français" itemprop="url" href="https://www.red.cl/fr/preparez-votre-voyage/cuando-llega/" class="nav-link" aria-label="Cambiar a Français"><span itemprop="name"><span class="wpml-ls-native" lang="fr">Français</span></span></a></li>
+</ul></nav>
+<div class="favoritos cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="favoritos">
+    <a href="javascript:void(0)" class="cerrarMenuFavoritos" title="Cerrar el menú de mis favoritos"><img src="https://www.red.cl/wp-content/themes/red/images/iconos/menu-cerrar.png" alt="Ícono de cerrar" /></a>
+    <div class="contenidoFavoritos"></div>
+</div>
+    <script src="https://www.red.cl/wp-content/themes/red/js/jquery-ui.min.js"></script>
+    <script src="https://www.red.cl/wp-content/themes/red/js/popper.min.js"></script>
+    <script src="https://www.red.cl/wp-content/themes/red/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.red.cl/wp-content/themes/red/js/bootstrap-select.min.js"></script>
+    <script src="https://www.red.cl/wp-content/themes/red/js/jquery.datetimepicker.full.min.js"></script>
+
+    <!-- Accessibility Code for "www.red.cl" -->
+    <script>
+    window.interdeal = {
+        "sitekey": "fe1380db29cff09d9bf324b83df75688",
+        "Position": "left",
+        "domains": {
+            "js": "https://cdn.equalweb.com/",
+            "acc": "https://access.equalweb.com/"
+        },
+        "Menulang": "ES",
+        "btnStyle": {
+            "vPosition": [
+                "80%",
+                "20%"
+            ],
+            "scale": [
+                "0.5",
+                "0.5"
+            ],
+            "color": {
+                "main": "#1c4bb6",
+                "second": "#ffffff"
+            },
+            "icon": {
+                "outline": false,
+                "type": 1,
+                "shape": "circle"
+            }
+        }
+    };
+    (function(doc, head, body){
+        var coreCall             = doc.createElement('script');
+        coreCall.src             = interdeal.domains.js + 'core/5.1.0/accessibility.js';
+        coreCall.defer           = true;
+        coreCall.integrity       = 'sha512-TcsprTlCCE0u/G5TN3zikzkynCEIRcfd96+RejMcyd2HFPnTpVUDxumXmFb/rSJ3ogQM+b/yvYWLwV6duAuJQg==';
+        coreCall.crossOrigin     = 'anonymous';
+        coreCall.setAttribute('data-cfasync', true );
+        body? body.appendChild(coreCall) : head.appendChild(coreCall);
+    })(document, document.head, document.body);
+    </script>
+
+			<div class='asp_hidden_data' id="asp_hidden_data" style="display: none !important;">
+			<svg style="position:absolute" height="0" width="0">
+				<filter id="aspblur">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+				</filter>
+			</svg>
+			<svg style="position:absolute" height="0" width="0">
+				<filter id="no_aspblur"></filter>
+			</svg>
+		</div>
+		<script id='wd-asp-instances-4cb8dc85'>window.ASP_INSTANCES = [];window.ASP_INSTANCES[1] = {"homeurl":"https:\/\/www.red.cl\/","is_results_page":0,"resultstype":"vertical","resultsposition":"hover","resultsSnapTo":"left","results":{"width":"auto","width_tablet":"auto","width_phone":"auto"},"itemscount":4,"charcount":0,"highlight":0,"highlightWholewords":1,"singleHighlight":0,"scrollToResults":{"enabled":1,"offset":0},"autocomplete":{"enabled":1,"trigger_charcount":0,"googleOnly":1,"lang":"en","mobile":1},"trigger":{"delay":300,"autocomplete_delay":310,"update_href":0,"facet":1,"type":1,"click":"custom_url","click_location":"same","return":"custom_url","return_location":"same","redirect_url":"resultados\/?asp_s={phrase}","elementor_url":"https:\/\/www.red.cl\/?asp_ls={phrase}"},"overridewpdefault":0,"override_method":"get","settings":{"unselectChildren":1,"hideChildren":0},"settingsimagepos":"right","settingsVisible":0,"settingsHideOnRes":0,"prescontainerheight":"400px","closeOnDocClick":1,"focusOnPageload":0,"isotopic":{"itemWidth":"200px","itemWidthTablet":"200px","itemWidthPhone":"200px","itemHeight":"200px","itemHeightTablet":"200px","itemHeightPhone":"200px","pagination":1,"rows":2,"gutter":5,"showOverlay":1,"blurOverlay":1,"hideContent":1},"loaderLocation":"auto","show_more":{"enabled":0,"url":"?s={phrase}","elementor_url":"https:\/\/www.red.cl\/?asp_ls={phrase}","action":"ajax","location":"same","infinite":1},"mobile":{"trigger_on_type":1,"click_action":"custom_url","return_action":"custom_url","click_action_location":"same","return_action_location":"same","redirect_url":"resultados\/?asp_s={phrase}","elementor_url":"https:\/\/www.red.cl\/?asp_ls={phrase}","menu_selector":"#menu-toggle","hide_keyboard":0,"force_res_hover":0,"force_sett_hover":0,"force_sett_state":"none"},"compact":{"enabled":0,"focus":1,"width":"100%","width_tablet":"480px","width_phone":"320px","closeOnMagnifier":1,"closeOnDocument":0,"position":"static","overlay":0},"sb":{"redirect_action":"ajax_search","redirect_location":"same","redirect_url":"?s={phrase}","elementor_url":"https:\/\/www.red.cl\/?asp_ls={phrase}"},"rb":{"action":"nothing"},"animations":{"pc":{"settings":{"anim":"fadedrop","dur":300},"results":{"anim":"fadedrop","dur":300},"items":"fadeInDown"},"mob":{"settings":{"anim":"fadedrop","dur":300},"results":{"anim":"fadedrop","dur":300},"items":"voidanim"}},"select2":{"nores":"No results match"},"detectVisibility":0,"autop":{"state":"disabled","phrase":"","count":10},"wooShop":{"useAjax":0,"selector":"#main","url":""},"taxArchive":{"useAjax":0,"selector":"#main","url":""},"cptArchive":{"useAjax":0,"selector":"#main","url":""},"resPage":{"useAjax":0,"selector":"#main","trigger_type":1,"trigger_facet":1,"trigger_magnifier":0,"trigger_return":0},"fss_layout":"flex","scrollBar":{"horizontal":{"enabled":1}},"divi":{"bodycommerce":0},"preventBodyScroll":0,"statistics":0,"preventEvents":0};</script><script type='text/javascript' id='asp-6bd77b9a-js-before'>if ( typeof window.ASP == 'undefined') { window.ASP = {wp_rocket_exception: "DOMContentLoaded", ajaxurl: "https:\/\/www.red.cl\/wp-admin\/admin-ajax.php", backend_ajaxurl: "https:\/\/www.red.cl\/wp-admin\/admin-ajax.php", asp_url: "https:\/\/www.red.cl\/wp-content\/plugins\/ajax-search-pro\/", upload_url: "https:\/\/www.red.cl\/wp-content\/uploads\/asp_upload\/", detect_ajax: 1, media_query: "ti6Qrb", version: 5082, pageHTML: "", additional_scripts: [{"handle":"wd-asp-ajaxsearchpro","path":"\/var\/www\/html\/wordpress\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-prereq.min.js","src":"https:\/\/www.red.cl\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-prereq.min.js","prereq":[]},{"handle":"wd-asp-ajaxsearchpro-core","path":"\/var\/www\/html\/wordpress\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-core.min.js","src":"https:\/\/www.red.cl\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-core.min.js","prereq":[]},{"handle":"wd-asp-ajaxsearchpro-settings","path":"\/var\/www\/html\/wordpress\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-settings.min.js","src":"https:\/\/www.red.cl\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-settings.min.js","prereq":["wd-asp-ajaxsearchpro"]},{"handle":"wd-asp-ajaxsearchpro-vertical","path":"\/var\/www\/html\/wordpress\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-results-vertical.min.js","src":"https:\/\/www.red.cl\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-results-vertical.min.js","prereq":["wd-asp-ajaxsearchpro"]},{"handle":"wd-asp-ajaxsearchpro-live","path":"\/var\/www\/html\/wordpress\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-live.min.js","src":"https:\/\/www.red.cl\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-live.min.js","prereq":["wd-asp-ajaxsearchpro"]},{"handle":"wd-asp-ajaxsearchpro-autocomplete","path":"\/var\/www\/html\/wordpress\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-autocomplete.min.js","src":"https:\/\/www.red.cl\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-autocomplete.min.js","prereq":["wd-asp-ajaxsearchpro"]},{"handle":"wd-asp-ajaxsearchpro-addon-woocommerce","path":"\/var\/www\/html\/wordpress\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-addons-woocommerce.min.js","src":"https:\/\/www.red.cl\/wp-content\/plugins\/ajax-search-pro\/js\/min\/plugin\/optimized\/asp-addons-woocommerce.min.js","prereq":["wd-asp-ajaxsearchpro-autocomplete"]}], script_async_load: false, font_url: "https:\/\/www.red.cl\/wp-content\/plugins\/ajax-search-pro\/css\/fonts\/icons\/icons2.woff2", init_only_in_viewport: true, highlight: {"enabled":false,"data":[]}, debug: false, instances: {}, analytics: {"method":"event","tracking_id":"","event":{"focus":{"active":1,"action":"focus","category":"ASP {search_id} | {search_name}","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASP {search_id} | {search_name}","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASP {search_id} | {search_name}","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASP {search_id} | {search_name}","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASP {search_id} | {search_name}","label":"Return button pressed","value":"1"},"try_this":{"active":1,"action":"try_this","category":"ASP {search_id} | {search_name}","label":"Try this click | {phrase}","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASP {search_id} | {search_name}","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASP {search_id} | {search_name}","label":"{result_title} | {result_url}","value":"1"}}}}};</script><script async type='text/javascript' src='https://www.red.cl/wp-content/cache/asp/asp-6bd77b9a.min.js' id='asp-6bd77b9a-js'></script></body>
+</html>
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/?utm_source=w3tc&utm_medium=footer_comment&utm_campaign=free_plugin
+
+
+Served from: www.red.cl @ 2026-04-23 18:49:34 by W3 Total Cache
+-->
