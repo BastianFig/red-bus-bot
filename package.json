@@ -1,13 +1,14 @@
 {
   "name": "red-bus-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "API de tiempos de llegada de micros Red Santiago para Wear OS y WhatsApp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "node --watch index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["red-santiago", "buses", "wear-os", "whatsapp-bot"],
+  "author": "BastianFigM",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {

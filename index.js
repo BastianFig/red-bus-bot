@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const { handleMessage } = require('./handlers/messageHandler');
+const { getBuses }      = require('./services/redApi');
 
 const app = express();
 app.use(express.json());
@@ -52,6 +53,23 @@ app.post('/webhook', async (req, res) => {
   });
 });
 
+// API para la app Wear OS
+app.get('/api/buses/:paradero', async (req, res) => {
+  const { paradero } = req.params;
+  const servicio     = req.query.servicio || '';
+
+  if (!/^[A-Za-z]{2}\d{3,4}$/.test(paradero)) {
+    return res.status(400).json({ error: 'Código de paradero inválido (ej: PA433)' });
+  }
+
+  try {
+    const buses = await getBuses(paradero.toUpperCase(), servicio.toUpperCase());
+    res.json({ paradero: paradero.toUpperCase(), buses });
+  } catch (err) {
+    res.status(502).json({ error: 'Error consultando red.cl', detail: err.message });
+  }
+});
+
 // Ruta de prueba local — sin necesitar WhatsApp
 app.get('/test/:paradero', async (req, res) => {
   try {
@@ -63,6 +81,7 @@ app.get('/test/:paradero', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Bot corriendo en http://localhost:${PORT}`);
-  console.log(`🧪 Prueba: http://localhost:${PORT}/test/PA433`);
+  console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`📡 API:   http://localhost:${PORT}/api/buses/PA433`);
+  console.log(`🧪 Test:  http://localhost:${PORT}/test/PA433`);
 });
