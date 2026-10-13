@@ -58,8 +58,8 @@ app.get('/api/buses/:paradero', async (req, res) => {
   const { paradero } = req.params;
   const servicio     = req.query.servicio || '';
 
-  if (!/^[A-Za-z]{2}\d{3,4}$/.test(paradero)) {
-    return res.status(400).json({ error: 'Código de paradero inválido (ej: PA433)' });
+  if (!/^[A-Za-z]{2}\d{2,4}$/.test(paradero)) {
+    return res.status(400).json({ error: 'Código de paradero inválido (ej: PA433 o PF54)' });
   }
 
   try {
