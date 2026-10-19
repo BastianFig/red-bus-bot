@@ -22,5 +22,6 @@ data class Bus(
     val horaprediccionbus1: String? = "",
     val horaprediccionbus2: String? = "",
     val codigorespuesta: String? = "",
+    val respuestaServicio: String? = "",
     val color: String? = ""
 )

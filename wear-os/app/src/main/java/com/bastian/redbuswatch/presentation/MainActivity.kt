@@ -349,15 +349,18 @@ fun BusItem(bus: Bus) {
             )
         }
 
-        if (bus.codigorespuesta == "00") {
-            if (!bus.horaprediccionbus1.isNullOrEmpty()) {
-                Text(text = "→ ${bus.horaprediccionbus1}", fontSize = 11.sp, color = Color.White)
-            }
+        // El código 00 trae dos buses y el 01 uno solo; ambos tienen predicción
+        if (!bus.horaprediccionbus1.isNullOrEmpty()) {
+            Text(text = "→ ${bus.horaprediccionbus1}", fontSize = 11.sp, color = Color.White)
             if (!bus.horaprediccionbus2.isNullOrEmpty()) {
                 Text(text = "→ ${bus.horaprediccionbus2}", fontSize = 10.sp, color = Color(0xFF999999))
             }
         } else {
-            Text(text = "⚠ Sin servicio", fontSize = 10.sp, color = MaterialTheme.colorScheme.error)
+            Text(
+                text = "⚠ ${bus.respuestaServicio ?: "Sin servicio"}",
+                fontSize = 10.sp,
+                color = MaterialTheme.colorScheme.error
+            )
         }
     }
 }
