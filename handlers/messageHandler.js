@@ -2,7 +2,7 @@ const { getBuses } = require('../services/redApi');
 
 function parseInput(msg) {
   const upper = msg.trim().toUpperCase();
-  const paraderoMatch = upper.match(/\b[A-Z]{2}\d{3,4}\b/);
+  const paraderoMatch = upper.match(/\b[A-Z]{2}\d{1,5}\b/);
   if (!paraderoMatch) return null;
   const resto = upper.replace(paraderoMatch[0], '').trim();
   const servicioMatch = resto.match(/\b[A-Z]?\d{1,3}[A-Z]?\b/);
