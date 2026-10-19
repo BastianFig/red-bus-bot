@@ -38,7 +38,7 @@ function getNearby(lat, lng, radio = 500, limit = 20) {
     if (Math.abs(s.la - lat) > dLat || Math.abs(s.lo - lng) > dLng) continue;
     const d = distanceMeters(lat, lng, s.la, s.lo);
     if (d <= radio) {
-      result.push({ codigo: s.c, nombre: s.n, lat: s.la, lng: s.lo, distancia: Math.round(d) });
+      result.push({ codigo: s.c, nombre: s.n, lat: s.la, lng: s.lo, distancia: Math.round(d), recorridos: s.r || [] });
     }
   }
 

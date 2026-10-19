@@ -1,7 +1,8 @@
 // Convierte data/gtfs/stops.txt (GTFS del DTPM) en data/stops.json,
 // dejando solo paraderos de bus con el código que entiende red.cl.
 // Uso: node scripts/buildStops.js
-const fs   = require('fs');
+const fs       = require('fs');
+const readline = require('readline');
 const path = require('path');
 
 const INPUT  = path.join(__dirname, '..', 'data', 'gtfs', 'stops.txt');
@@ -62,6 +63,55 @@ for (const line of lines.slice(1)) {
   });
 }
 
-fs.writeFileSync(OUTPUT, JSON.stringify(stops));
-console.log(`✅ ${stops.length} paraderos -> ${path.relative(process.cwd(), OUTPUT)}`);
-console.log(`   descartados: ${skipped} (metro/tren/otros), duplicados: ${duplicated}`);
+const GTFS_DIR = path.dirname(INPUT);
+
+// Lee un CSV del GTFS línea a línea (stop_times.txt pesa decenas de MB)
+async function eachRow(file, fn) {
+  const rl = readline.createInterface({ input: fs.createReadStream(path.join(GTFS_DIR, file), 'utf8'), crlfDelay: Infinity });
+  let header = null;
+  for await (const raw of rl) {
+    const line = raw.replace(/^﻿/, '');
+    if (!line) continue;
+    if (!header) { header = parseCsvLine(line); continue; }
+    fn(parseCsvLine(line), name => header.indexOf(name));
+  }
+}
+
+// Recorridos que pasan por cada paradero: stop_times (viaje -> paradero) + trips (viaje -> ruta) + routes (ruta -> nombre)
+async function addRoutes(stops) {
+  for (const f of ['routes.txt', 'trips.txt', 'stop_times.txt']) {
+    if (!fs.existsSync(path.join(GTFS_DIR, f))) {
+      console.warn(`   sin ${f}: los paraderos quedan sin recorridos`);
+      return;
+    }
+  }
+
+  const routeName = new Map();
+  await eachRow('routes.txt', (f, col) => routeName.set(f[col('route_id')], f[col('route_short_name')]?.trim() || f[col('route_id')]));
+
+  const tripRoute = new Map();
+  await eachRow('trips.txt', (f, col) => tripRoute.set(f[col('trip_id')], routeName.get(f[col('route_id')])));
+
+  const byStop = new Map(stops.map(s => [s.c, new Set()]));
+  await eachRow('stop_times.txt', (f, col) => {
+    const set = byStop.get(f[col('stop_id')]);
+    const ruta = tripRoute.get(f[col('trip_id')]);
+    if (set && ruta) set.add(ruta);
+  });
+
+  // Orden natural: 101, 102, 210, 210e, 506...
+  const natural = (a, b) => a.localeCompare(b, 'es', { numeric: true });
+  let conRutas = 0;
+  for (const s of stops) {
+    s.r = [...byStop.get(s.c)].sort(natural);
+    if (s.r.length) conRutas++;
+  }
+  console.log(`   con recorridos: ${conRutas} de ${stops.length}`);
+}
+
+(async () => {
+  await addRoutes(stops);
+  fs.writeFileSync(OUTPUT, JSON.stringify(stops));
+  console.log(`✅ ${stops.length} paraderos -> ${path.relative(process.cwd(), OUTPUT)}`);
+  console.log(`   descartados: ${skipped} (metro/tren/otros), duplicados: ${duplicated}`);
+})();
