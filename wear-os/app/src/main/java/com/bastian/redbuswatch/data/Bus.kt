@@ -5,6 +5,17 @@ data class BusResponse(
     val buses: List<Bus>
 )
 
+data class NearbyResponse(
+    val paraderos: List<ParaderoCercano>
+)
+
+data class ParaderoCercano(
+    val codigo: String,
+    val nombre: String,
+    val distancia: Int,
+    val recorridos: List<String> = emptyList()
+)
+
 data class Bus(
     val servicio: String? = "",
     val destino: String? = "",

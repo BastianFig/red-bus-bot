@@ -1,19 +1,25 @@
 package com.bastian.redbuswatch.presentation
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.app.RemoteInput
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -25,7 +31,10 @@ import androidx.wear.compose.foundation.lazy.items
 import androidx.wear.compose.foundation.lazy.rememberScalingLazyListState
 import androidx.wear.compose.material3.*
 import androidx.wear.input.RemoteInputIntentHelper
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.Priority
 import com.bastian.redbuswatch.data.Bus
+import com.bastian.redbuswatch.data.ParaderoCercano
 import com.bastian.redbuswatch.presentation.theme.BlueBus
 import com.bastian.redbuswatch.presentation.theme.RedBusWatchTheme
 
@@ -64,7 +73,45 @@ fun BusApp(vm: BusViewModel = viewModel()) {
         launcher.launch(intent)
     }
 
+    val context = LocalContext.current
+
+    @SuppressLint("MissingPermission")
+    fun obtenerUbicacion() {
+        LocationServices.getFusedLocationProviderClient(context)
+            .getCurrentLocation(Priority.PRIORITY_BALANCED_POWER_ACCURACY, null)
+            .addOnSuccessListener { loc ->
+                if (loc != null) vm.cargarCercanos(loc.latitude, loc.longitude)
+                else vm.errorCerca("No se pudo obtener la ubicación")
+            }
+            .addOnFailureListener { vm.errorCerca("No se pudo obtener la ubicación") }
+    }
+
+    val permisoLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) { permisos ->
+        if (permisos.values.any { it }) obtenerUbicacion()
+        else vm.errorCerca("Permiso de ubicación denegado")
+    }
+
+    fun abrirCerca() {
+        vm.abrirCerca()
+        val concedido =
+            context.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
+            context.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+        if (concedido) obtenerUbicacion()
+        else permisoLauncher.launch(
+            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
+        )
+    }
+
     val listState = rememberScalingLazyListState()
+
+    BackHandler(enabled = vm.vistaCerca) { vm.cerrarCerca() }
+
+    if (vm.vistaCerca) {
+        CercaScreen(vm = vm, onReintentar = { abrirCerca() })
+        return
+    }
 
     AppScaffold {
         ScreenScaffold(scrollState = listState) {
@@ -155,6 +202,16 @@ fun BusApp(vm: BusViewModel = viewModel()) {
                     }
                 }
 
+                // Botón paraderos cercanos
+                item {
+                    Button(
+                        onClick = { abrirCerca() },
+                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
+                    ) {
+                        Text("📍 Cerca de mí", fontSize = 12.sp)
+                    }
+                }
+
                 // Botón buscar paradero
                 item {
                     Button(
@@ -168,6 +225,100 @@ fun BusApp(vm: BusViewModel = viewModel()) {
                     }
                 }
             }
+        }
+    }
+}
+
+@Composable
+fun CercaScreen(vm: BusViewModel, onReintentar: () -> Unit) {
+    val listState = rememberScalingLazyListState()
+
+    AppScaffold {
+        ScreenScaffold(scrollState = listState) {
+            ScalingLazyColumn(
+                state = listState,
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                contentPadding = PaddingValues(horizontal = 8.dp, vertical = 32.dp)
+            ) {
+                item {
+                    Text(
+                        text = "📍 Cerca de mí",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 14.sp,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth().padding(bottom = 4.dp)
+                    )
+                }
+
+                if (vm.cercaLoading) {
+                    item { CircularProgressIndicator(modifier = Modifier.padding(16.dp)) }
+                }
+
+                vm.cercaError?.let { err ->
+                    item {
+                        Text(
+                            text = err,
+                            color = MaterialTheme.colorScheme.error,
+                            fontSize = 12.sp,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.fillMaxWidth().padding(8.dp)
+                        )
+                    }
+                    item {
+                        OutlinedButton(onClick = onReintentar, modifier = Modifier.fillMaxWidth()) {
+                            Text("↺ Reintentar", fontSize = 11.sp)
+                        }
+                    }
+                }
+
+                items(vm.cercanos) { p ->
+                    ParaderoItem(paradero = p, onClick = { vm.elegirParadero(p.codigo) })
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun ParaderoItem(paradero: ParaderoCercano, onClick: () -> Unit) {
+    val maxChips = 4
+    val chips = paradero.recorridos.take(maxChips).joinToString(" · ")
+    val resto = paradero.recorridos.size - maxChips
+
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 3.dp)
+            .background(color = Color(0xFF1A1A1A), shape = RoundedCornerShape(12.dp))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 10.dp, vertical = 8.dp)
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(
+                text = paradero.codigo,
+                fontWeight = FontWeight.Bold,
+                fontSize = 13.sp,
+                color = BlueBus
+            )
+            Spacer(Modifier.weight(1f))
+            Text(text = "${paradero.distancia} m", fontSize = 11.sp, color = Color.White)
+        }
+        Text(
+            text = paradero.nombre,
+            fontSize = 10.sp,
+            maxLines = 2,
+            overflow = TextOverflow.Ellipsis,
+            color = Color(0xFFCCCCCC)
+        )
+        if (chips.isNotEmpty()) {
+            Text(
+                text = if (resto > 0) "$chips +$resto" else chips,
+                fontSize = 10.sp,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis,
+                color = Color(0xFF999999)
+            )
         }
     }
 }

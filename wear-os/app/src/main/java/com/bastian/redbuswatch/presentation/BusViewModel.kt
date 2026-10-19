@@ -9,6 +9,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.bastian.redbuswatch.data.Bus
 import com.bastian.redbuswatch.data.BusApi
+import com.bastian.redbuswatch.data.ParaderoCercano
 import kotlinx.coroutines.launch
 
 class BusViewModel(application: Application) : AndroidViewModel(application) {
@@ -61,6 +62,53 @@ class BusViewModel(application: Application) : AndroidViewModel(application) {
                 isLoading = false
             }
         }
+    }
+
+    // --- Cerca de mí ---
+    var vistaCerca by mutableStateOf(false)
+        private set
+
+    var cercanos by mutableStateOf<List<ParaderoCercano>>(emptyList())
+        private set
+
+    var cercaLoading by mutableStateOf(false)
+        private set
+
+    var cercaError by mutableStateOf<String?>(null)
+        private set
+
+    fun abrirCerca() {
+        vistaCerca = true
+        cercaLoading = true
+        cercaError = null
+        cercanos = emptyList()
+    }
+
+    fun cerrarCerca() {
+        vistaCerca = false
+    }
+
+    fun errorCerca(mensaje: String) {
+        cercaError = mensaje
+        cercaLoading = false
+    }
+
+    fun cargarCercanos(lat: Double, lng: Double) {
+        viewModelScope.launch {
+            try {
+                cercanos = BusApi.service.getNearby(lat, lng).paraderos
+                if (cercanos.isEmpty()) cercaError = "No hay paraderos a 500 m"
+            } catch (e: Exception) {
+                cercaError = "Sin conexión"
+            } finally {
+                cercaLoading = false
+            }
+        }
+    }
+
+    fun elegirParadero(codigo: String) {
+        vistaCerca = false
+        buscar(codigo)
     }
 
     fun refresh() {
