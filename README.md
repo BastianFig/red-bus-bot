@@ -7,12 +7,12 @@ Consulta en tiempo real cuándo llega tu micro de **Red Santiago** directo desde
 ## Arquitectura
 
 ```
-Wear OS App ──┐
-              ├──► API REST (Node.js) ──► red.cl
-WhatsApp Bot ─┘
+Wear OS App ──► API REST (Node.js) ──► red.cl
+                       │
+                       └──► data/stops.json (paraderos y recorridos del GTFS)
 ```
 
-El servidor actúa como intermediario entre los clientes y red.cl, con caché del JWT para minimizar requests.
+El servidor actúa como intermediario entre la app y red.cl, con caché del JWT para minimizar requests. Los paraderos cercanos se calculan localmente con los datos del GTFS.
 
 ---
 
@@ -20,9 +20,15 @@ El servidor actúa como intermediario entre los clientes y red.cl, con caché de
 
 ```
 red-bus-bot/
-├── index.js              ← servidor Express + endpoints
-├── handlers/             ← lógica de mensajes WhatsApp
-├── services/             ← cliente red.cl + caché JWT
+├── index.js              ← arranca el servidor (abre el puerto)
+├── app.js                ← arma Express: middlewares y rutas
+├── routes/
+│   └── api.js            ← /api/buses/:paradero y /api/nearby
+├── middleware/
+│   └── rateLimit.js      ← límite de consultas por IP
+├── services/             ← cliente red.cl + caché JWT + paraderos cercanos
+├── scripts/              ← buildStops.js: genera data/stops.json desde el GTFS
+├── data/                 ← stops.json (paraderos y recorridos)
 ├── wear-os/              ← app Android (Kotlin + Jetpack Compose)
 │   └── app/src/main/
 │       ├── data/         ← modelos + Retrofit
@@ -58,9 +64,6 @@ Prueba en el navegador: `http://localhost:3000/api/buses/PA433`
 | Variable | Descripción |
 |---|---|
 | `PORT` | Puerto del servidor (default: 3000) |
-| `VERIFY_TOKEN` | Token secreto para el webhook de Meta |
-| `WHATSAPP_TOKEN` | Token de la API de WhatsApp Business |
-| `PHONE_NUMBER_ID` | ID del número en Meta |
 
 ---
 
@@ -107,9 +110,37 @@ GET /api/buses/PF54
 }
 ```
 
-### `GET /test/:paradero`
+### `GET /api/nearby`
 
-Respuesta en texto plano, útil para pruebas rápidas en el navegador.
+Paraderos cercanos a una coordenada, ordenados por distancia.
+
+```
+GET /api/nearby?lat=-33.4489&lng=-70.6693
+GET /api/nearby?lat=-33.4489&lng=-70.6693&radio=300&limit=10
+```
+
+`radio` en metros (por defecto 500, máximo 2000) y `limit` (por defecto 20, máximo 50).
+
+**Respuesta:**
+```json
+{
+  "lat": -33.4489,
+  "lng": -70.6693,
+  "radio": 300,
+  "paraderos": [
+    {
+      "codigo": "PA369",
+      "nombre": "Parada 5 / (M) República",
+      "lat": -33.448398,
+      "lng": -70.668887,
+      "distancia": 68,
+      "recorridos": ["401", "405", "406"]
+    }
+  ]
+}
+```
+
+Todos los endpoints de `/api` tienen un límite de 60 consultas por minuto por IP (responden `429` al pasarse).
 
 ---
 
@@ -118,7 +149,8 @@ Respuesta en texto plano, útil para pruebas rápidas en el navegador.
 - [x] API REST de tiempos de llegada
 - [x] App Wear OS funcional en Galaxy Watch 7
 - [x] Paraderos favoritos guardados en el reloj
-- [x] Bot de WhatsApp
+- [x] Paraderos cercanos con recorridos (`/api/nearby`)
+- [x] Refresco automático y buses ordenados por llegada
 - [ ] Notificación cuando el bus está a menos de 2 minutos
 - [ ] Login + favoritos sincronizados en la nube (Firebase)
 - [ ] Publicación en Google Play
