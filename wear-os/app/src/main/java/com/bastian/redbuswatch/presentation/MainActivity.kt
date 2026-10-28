@@ -12,33 +12,52 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.LocationOn
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
+import androidx.wear.compose.foundation.lazy.TransformingLazyColumn
+import androidx.wear.compose.foundation.lazy.TransformingLazyColumnItemScope
+import androidx.wear.compose.foundation.lazy.TransformingLazyColumnScope
 import androidx.wear.compose.foundation.lazy.items
-import androidx.wear.compose.foundation.lazy.rememberScalingLazyListState
+import androidx.wear.compose.foundation.lazy.rememberTransformingLazyColumnState
+import androidx.wear.compose.foundation.pager.HorizontalPager
+import androidx.wear.compose.foundation.pager.rememberPagerState
 import androidx.wear.compose.material3.*
+import androidx.wear.compose.material3.lazy.TransformationSpec
+import androidx.wear.compose.material3.lazy.rememberTransformationSpec
+import androidx.wear.compose.material3.lazy.transformedHeight
 import androidx.wear.input.RemoteInputIntentHelper
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.bastian.redbuswatch.data.Bus
 import com.bastian.redbuswatch.data.ParaderoCercano
+import com.bastian.redbuswatch.data.clave
 import com.bastian.redbuswatch.presentation.theme.BlueBus
 import com.bastian.redbuswatch.presentation.theme.RedBusWatchTheme
+import kotlinx.coroutines.delay
 
 private const val KEY_PARADERO = "paradero"
+private const val MAX_RECORRIDOS = 3
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -104,124 +123,32 @@ fun BusApp(vm: BusViewModel = viewModel()) {
         )
     }
 
-    val listState = rememberScalingLazyListState()
+    val pagerState = rememberPagerState(pageCount = { 3 })
 
-    BackHandler(enabled = vm.vistaCerca) { vm.cerrarCerca() }
-
-    if (vm.vistaCerca) {
-        CercaScreen(vm = vm, onReintentar = { abrirCerca() })
-        return
+    // Cada vez que la app vuelve a la vista, y si la lista ya es vieja, busca con la ubicación actual
+    val activity = context as ComponentActivity
+    DisposableEffect(activity) {
+        val observer = LifecycleEventObserver { _, evento ->
+            if (evento == Lifecycle.Event.ON_RESUME && vm.paradero.isEmpty() && vm.cercaDesactualizada()) {
+                abrirCerca()
+            }
+        }
+        activity.lifecycle.addObserver(observer)
+        onDispose { activity.lifecycle.removeObserver(observer) }
     }
 
+    BackHandler(enabled = vm.paradero.isNotEmpty()) { vm.cerrarBuses() }
+
     AppScaffold {
-        ScreenScaffold(scrollState = listState) {
-            ScalingLazyColumn(
-                state = listState,
-                modifier = Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                contentPadding = PaddingValues(horizontal = 8.dp, vertical = 32.dp)
-            ) {
-                // Header
-                item {
-                    Text(
-                        text = if (vm.paradero.isEmpty()) "🚌 Red Santiago" else "🚌 ${vm.paradero}",
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 14.sp,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier.fillMaxWidth().padding(bottom = 4.dp)
-                    )
-                }
-
-                // Loading
-                if (vm.isLoading) {
-                    item {
-                        CircularProgressIndicator(modifier = Modifier.padding(16.dp))
-                    }
-                }
-
-                // Error
-                vm.error?.let { err ->
-                    item {
-                        Text(
-                            text = err,
-                            color = MaterialTheme.colorScheme.error,
-                            fontSize = 12.sp,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier.fillMaxWidth().padding(8.dp)
-                        )
-                    }
-                }
-
-                // Lista de buses
-                items(vm.buses) { bus ->
-                    BusItem(bus = bus)
-                }
-
-                // Botón favorito (solo si hay paradero activo)
-                if (vm.paradero.isNotEmpty() && !vm.isLoading) {
-                    item {
-                        val esFav = vm.isFavorite(vm.paradero)
-                        OutlinedButton(
-                            onClick = { vm.toggleFavorite(vm.paradero) },
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                text = if (esFav) "★ Quitar favorito" else "☆ Guardar favorito",
-                                fontSize = 11.sp
-                            )
-                        }
-                    }
-
-                    item {
-                        OutlinedButton(
-                            onClick = { vm.refresh() },
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text("↺ Actualizar", fontSize = 11.sp)
-                        }
-                    }
-                }
-
-                // Favoritos guardados
-                if (vm.favorites.isNotEmpty()) {
-                    item {
-                        Text(
-                            text = "Favoritos",
-                            fontSize = 11.sp,
-                            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
-                            modifier = Modifier.padding(top = 8.dp)
-                        )
-                    }
-                    items(vm.favorites) { fav ->
-                        Button(
-                            onClick = { vm.buscar(fav) },
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text("★ $fav", fontSize = 12.sp)
-                        }
-                    }
-                }
-
-                // Botón paraderos cercanos
-                item {
-                    Button(
-                        onClick = { abrirCerca() },
-                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
-                    ) {
-                        Text("📍 Cerca de mí", fontSize = 12.sp)
-                    }
-                }
-
-                // Botón buscar paradero
-                item {
-                    Button(
-                        onClick = { lanzarInput() },
-                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
-                    ) {
-                        Text(
-                            text = if (vm.paradero.isEmpty()) "Buscar paradero" else "Cambiar paradero",
-                            fontSize = 12.sp
-                        )
+        if (vm.paradero.isNotEmpty()) {
+            BusesScreen(vm)
+        } else {
+            HorizontalPagerScaffold(pagerState = pagerState) {
+                HorizontalPager(state = pagerState) { page ->
+                    when (page) {
+                        0 -> CercaPage(vm, onReintentar = { abrirCerca() })
+                        1 -> FavoritosPage(vm)
+                        else -> BuscarPage(onBuscar = { lanzarInput() })
                     }
                 }
             }
@@ -229,138 +156,381 @@ fun BusApp(vm: BusViewModel = viewModel()) {
     }
 }
 
+// ---------- Estructura común ----------
+
+// Pantalla con título arriba y lista con scroll; el botón inferior es opcional
 @Composable
-fun CercaScreen(vm: BusViewModel, onReintentar: () -> Unit) {
-    val listState = rememberScalingLazyListState()
+private fun Pantalla(
+    titulo: String,
+    edgeButton: (@Composable BoxScope.() -> Unit)? = null,
+    content: TransformingLazyColumnScope.(TransformationSpec) -> Unit
+) {
+    val listState = rememberTransformingLazyColumnState()
+    val spec = rememberTransformationSpec()
 
-    AppScaffold {
-        ScreenScaffold(scrollState = listState) {
-            ScalingLazyColumn(
-                state = listState,
-                modifier = Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                contentPadding = PaddingValues(horizontal = 8.dp, vertical = 32.dp)
-            ) {
-                item {
-                    Text(
-                        text = "📍 Cerca de mí",
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 14.sp,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier.fillMaxWidth().padding(bottom = 4.dp)
-                    )
-                }
-
-                if (vm.cercaLoading) {
-                    item { CircularProgressIndicator(modifier = Modifier.padding(16.dp)) }
-                }
-
-                vm.cercaError?.let { err ->
-                    item {
-                        Text(
-                            text = err,
-                            color = MaterialTheme.colorScheme.error,
-                            fontSize = 12.sp,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier.fillMaxWidth().padding(8.dp)
-                        )
-                    }
-                    item {
-                        OutlinedButton(onClick = onReintentar, modifier = Modifier.fillMaxWidth()) {
-                            Text("↺ Reintentar", fontSize = 11.sp)
-                        }
-                    }
-                }
-
-                items(vm.cercanos) { p ->
-                    ParaderoItem(paradero = p, onClick = { vm.elegirParadero(p.codigo) })
-                }
+    val lista: @Composable (PaddingValues) -> Unit = { padding ->
+        TransformingLazyColumn(
+            state = listState,
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            contentPadding = padding
+        ) {
+            item {
+                ListHeader(
+                    modifier = Modifier.transformedHeight(this, spec),
+                    transformation = SurfaceTransformation(spec)
+                ) { Text(titulo) }
             }
+            content(spec)
         }
+    }
+
+    // ScreenScaffold tiene una versión con botón inferior obligatorio y otra sin él
+    if (edgeButton != null) {
+        ScreenScaffold(scrollState = listState, edgeButton = edgeButton) { padding -> lista(padding) }
+    } else {
+        ScreenScaffold(scrollState = listState) { padding -> lista(padding) }
     }
 }
 
-@Composable
-fun ParaderoItem(paradero: ParaderoCercano, onClick: () -> Unit) {
-    val maxChips = 4
-    val chips = paradero.recorridos.take(maxChips).joinToString(" · ")
-    val resto = paradero.recorridos.size - maxChips
+// Ancho completo, altura que se adapta al borde redondo y movimiento animado al reordenarse
+private fun TransformingLazyColumnItemScope.tarjetaModifier(spec: TransformationSpec): Modifier =
+    Modifier.fillMaxWidth().transformedHeight(this, spec).animateItem()
 
+@Composable
+private fun MensajeEstado(texto: String, esError: Boolean = false) {
     Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 3.dp)
-            .background(color = Color(0xFF1A1A1A), shape = RoundedCornerShape(12.dp))
-            .clickable(onClick = onClick)
-            .padding(horizontal = 10.dp, vertical = 8.dp)
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 12.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(
-                text = paradero.codigo,
-                fontWeight = FontWeight.Bold,
-                fontSize = 13.sp,
-                color = BlueBus
+        if (esError) {
+            Icon(
+                imageVector = Icons.Filled.Warning,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.error,
+                modifier = Modifier.size(20.dp)
             )
+            Spacer(Modifier.height(4.dp))
+        }
+        Text(
+            text = texto,
+            fontSize = 12.sp,
+            textAlign = TextAlign.Center,
+            color = if (esError) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant
+        )
+    }
+}
+
+// ---------- Páginas de inicio ----------
+
+@Composable
+private fun CercaPage(vm: BusViewModel, onReintentar: () -> Unit) {
+    Pantalla(titulo = "Cerca de mí") { spec ->
+        item {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                IconButton(
+                    onClick = onReintentar,
+                    enabled = !vm.cercaLoading,
+                    modifier = Modifier.size(32.dp)
+                ) {
+                    Icon(Icons.Filled.Refresh, contentDescription = "Actualizar ubicación", modifier = Modifier.size(18.dp))
+                }
+                if (vm.cercaLoading) {
+                    Spacer(Modifier.width(6.dp))
+                    Text("Buscando…", fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                }
+            }
+        }
+
+        if (vm.cercaLoading && vm.cercanos.isEmpty()) {
+            item { CircularProgressIndicator(modifier = Modifier.padding(16.dp)) }
+        }
+
+        vm.cercaError?.let { err ->
+            item { MensajeEstado(texto = err, esError = true) }
+            item {
+                Button(
+                    onClick = onReintentar,
+                    colors = ButtonDefaults.filledTonalButtonColors(),
+                    modifier = tarjetaModifier(spec),
+                    transformation = SurfaceTransformation(spec)
+                ) {
+                    Icon(Icons.Filled.Refresh, contentDescription = null, modifier = Modifier.size(18.dp))
+                    Spacer(Modifier.width(6.dp))
+                    Text("Reintentar", fontSize = 12.sp)
+                }
+            }
+        }
+
+        items(vm.cercanos, key = { it.codigo }) { p ->
+            ParaderoCard(
+                paradero = p,
+                onClick = { vm.buscar(p.codigo) },
+                modifier = tarjetaModifier(spec),
+                transformation = SurfaceTransformation(spec)
+            )
+        }
+    }
+}
+
+@Composable
+private fun FavoritosPage(vm: BusViewModel) {
+    Pantalla(titulo = "Favoritos") { spec ->
+        if (vm.favorites.isEmpty()) {
+            item { MensajeEstado("Aún no tienes favoritos. Abre un paradero y toca la estrella.") }
+        }
+        items(vm.favorites, key = { it }) { fav ->
+            Row(verticalAlignment = Alignment.CenterVertically, modifier = tarjetaModifier(spec)) {
+                Card(
+                    onClick = { vm.buscar(fav) },
+                    modifier = Modifier.weight(1f),
+                    transformation = SurfaceTransformation(spec)
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Filled.Star,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(18.dp)
+                        )
+                        Spacer(Modifier.width(8.dp))
+                        Text(text = fav, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                    }
+                }
+                Spacer(Modifier.width(4.dp))
+                IconButton(onClick = { vm.toggleFavorite(fav) }, modifier = Modifier.size(36.dp)) {
+                    Icon(
+                        imageVector = Icons.Filled.Delete,
+                        contentDescription = "Quitar favorito",
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun BuscarPage(onBuscar: () -> Unit) {
+    Pantalla(titulo = "Buscar") { spec ->
+        item {
+            Button(
+                onClick = onBuscar,
+                modifier = tarjetaModifier(spec),
+                transformation = SurfaceTransformation(spec)
+            ) {
+                Icon(Icons.Filled.Search, contentDescription = null, modifier = Modifier.size(18.dp))
+                Spacer(Modifier.width(6.dp))
+                Text("Por código", fontSize = 13.sp)
+            }
+        }
+        item { MensajeEstado("Escribe el código del paradero, por ejemplo PA433.") }
+    }
+}
+
+// ---------- Detalle de un paradero ----------
+
+@Composable
+private fun BusesScreen(vm: BusViewModel) {
+    val activity = LocalContext.current as ComponentActivity
+
+    // Actualiza los tiempos cada 30 s, solo mientras la app está a la vista
+    LaunchedEffect(vm.paradero) {
+        while (true) {
+            delay(30_000)
+            if (activity.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) vm.refresh()
+        }
+    }
+
+    Pantalla(
+        titulo = vm.paradero,
+        edgeButton = {
+            EdgeButton(
+                onClick = { vm.refresh() },
+                buttonSize = EdgeButtonSize.ExtraSmall,
+                colors = ButtonDefaults.filledTonalButtonColors()
+            ) {
+                Icon(Icons.Filled.Refresh, contentDescription = "Actualizar", modifier = Modifier.size(20.dp))
+            }
+        }
+    ) { spec ->
+        if (vm.isLoading) {
+            item { CircularProgressIndicator(modifier = Modifier.padding(16.dp)) }
+        }
+
+        if (vm.actualizando) {
+            item {
+                Text(
+                    text = "Actualizando…",
+                    fontSize = 10.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        }
+
+        vm.error?.let { err ->
+            item { MensajeEstado(texto = err, esError = true) }
+        }
+
+        // La clave mantiene la identidad de cada tarjeta, así se desliza en vez de saltar al reordenarse
+        items(vm.buses, key = { it.clave() }) { bus ->
+            BusCard(bus = bus, modifier = tarjetaModifier(spec), transformation = SurfaceTransformation(spec))
+        }
+
+        if (!vm.isLoading) {
+            item {
+                val esFav = vm.isFavorite(vm.paradero)
+                Button(
+                    onClick = { vm.toggleFavorite(vm.paradero) },
+                    colors = ButtonDefaults.filledTonalButtonColors(),
+                    modifier = tarjetaModifier(spec),
+                    transformation = SurfaceTransformation(spec)
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.Star,
+                        contentDescription = null,
+                        tint = if (esFav) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(6.dp))
+                    Text(text = if (esFav) "Quitar favorito" else "Guardar favorito", fontSize = 11.sp)
+                }
+            }
+        }
+    }
+}
+
+// ---------- Tarjetas ----------
+
+@Composable
+private fun ParaderoCard(
+    paradero: ParaderoCercano,
+    onClick: () -> Unit,
+    modifier: Modifier,
+    transformation: SurfaceTransformation
+) {
+    val resto = paradero.recorridos.size - MAX_RECORRIDOS
+
+    Card(onClick = onClick, modifier = modifier, transformation = transformation) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Icon(
+                imageVector = Icons.Filled.LocationOn,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.size(14.dp)
+            )
+            Spacer(Modifier.width(4.dp))
+            Text(text = paradero.codigo, fontWeight = FontWeight.Bold, fontSize = 13.sp)
             Spacer(Modifier.weight(1f))
-            Text(text = "${paradero.distancia} m", fontSize = 11.sp, color = Color.White)
+            Text(
+                text = "${paradero.distancia} m",
+                fontSize = 11.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
         Text(
             text = paradero.nombre,
             fontSize = 10.sp,
             maxLines = 2,
             overflow = TextOverflow.Ellipsis,
-            color = Color(0xFFCCCCCC)
+            color = MaterialTheme.colorScheme.onSurfaceVariant
         )
-        if (chips.isNotEmpty()) {
-            Text(
-                text = if (resto > 0) "$chips +$resto" else chips,
-                fontSize = 10.sp,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
-                color = Color(0xFF999999)
-            )
+        if (paradero.recorridos.isNotEmpty()) {
+            Spacer(Modifier.height(4.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                paradero.recorridos.take(MAX_RECORRIDOS).forEach { RecorridoPill(it) }
+                if (resto > 0) {
+                    Text(
+                        text = "+$resto",
+                        fontSize = 10.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
         }
     }
 }
 
 @Composable
-fun BusItem(bus: Bus) {
-    Column(
+private fun RecorridoPill(nombre: String) {
+    Text(
+        text = nombre,
+        fontSize = 10.sp,
+        fontWeight = FontWeight.SemiBold,
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 3.dp)
-            .background(color = Color(0xFF1A1A1A), shape = RoundedCornerShape(12.dp))
-            .padding(horizontal = 10.dp, vertical = 8.dp)
-    ) {
+            .padding(end = 4.dp)
+            .background(MaterialTheme.colorScheme.surfaceContainerHigh, RoundedCornerShape(50))
+            .padding(horizontal = 6.dp, vertical = 1.dp)
+    )
+}
+
+// Es una Card para que se adapte al borde redondo igual que el resto; tocarla no hace nada por ahora
+@Composable
+private fun BusCard(bus: Bus, modifier: Modifier, transformation: SurfaceTransformation) {
+    val (fondo, texto) = colorServicio(bus.color)
+    val t1 = formatTiempo(bus.horaprediccionbus1)
+    val t2 = formatTiempo(bus.horaprediccionbus2)
+
+    Card(onClick = {}, modifier = modifier, transformation = transformation) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
                 text = bus.servicio ?: "-",
                 fontWeight = FontWeight.Bold,
                 fontSize = 13.sp,
-                color = BlueBus
+                color = texto,
+                modifier = Modifier
+                    .background(fondo, RoundedCornerShape(50))
+                    .padding(horizontal = 8.dp, vertical = 3.dp)
             )
-            Spacer(Modifier.width(6.dp))
-            Text(
-                text = bus.destino ?: "",
-                fontSize = 11.sp,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                color = Color(0xFFCCCCCC)
-            )
-        }
-
-        // El código 00 trae dos buses y el 01 uno solo; ambos tienen predicción
-        if (!bus.horaprediccionbus1.isNullOrEmpty()) {
-            Text(text = "→ ${bus.horaprediccionbus1}", fontSize = 11.sp, color = Color.White)
-            if (!bus.horaprediccionbus2.isNullOrEmpty()) {
-                Text(text = "→ ${bus.horaprediccionbus2}", fontSize = 10.sp, color = Color(0xFF999999))
+            Spacer(Modifier.width(8.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = bus.destino ?: "",
+                    fontSize = 10.sp,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                if (t1.isNotEmpty()) {
+                    Text(text = t1, fontWeight = FontWeight.Bold, fontSize = 15.sp)
+                    if (t2.isNotEmpty()) {
+                        Text(
+                            text = "Luego $t2",
+                            fontSize = 10.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                } else {
+                    Text(
+                        text = bus.respuestaServicio ?: "Sin servicio",
+                        fontSize = 10.sp,
+                        color = MaterialTheme.colorScheme.error
+                    )
+                }
             }
-        } else {
-            Text(
-                text = "⚠ ${bus.respuestaServicio ?: "Sin servicio"}",
-                fontSize = 10.sp,
-                color = MaterialTheme.colorScheme.error
-            )
         }
     }
+}
+
+// Color de fondo del servicio (lo manda red.cl) y color de texto con buen contraste
+private fun colorServicio(hex: String?): Pair<Color, Color> {
+    val fondo = try {
+        Color(android.graphics.Color.parseColor(hex))
+    } catch (e: Exception) {
+        return BlueBus to Color.White
+    }
+    return fondo to if (fondo.luminance() > 0.5f) Color.Black else Color.White
+}
+
+// "Entre 22 Y 26 min" -> "22–26 min"; "Menos de 1 min" -> "< 1 min"
+private fun formatTiempo(raw: String?): String {
+    if (raw.isNullOrBlank()) return ""
+    val rango = Regex("""(\d+)\D+(\d+)\s*min""").find(raw)
+    if (rango != null) return "${rango.groupValues[1]}–${rango.groupValues[2]} min"
+    if (raw.contains("menos", ignoreCase = true)) return "< 1 min"
+    return raw
 }

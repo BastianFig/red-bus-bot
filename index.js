@@ -6,8 +6,36 @@ const { getNearby }     = require('./services/stopsService');
 
 const app = express();
 app.use(express.json());
+// Detrás del proxy de Render, para que req.ip sea la IP real del cliente
+app.set('trust proxy', 1);
 
 const { PORT, VERIFY_TOKEN, WHATSAPP_TOKEN, PHONE_NUMBER_ID } = process.env;
+
+// Límite de consultas por IP en /api, para no sobrecargar red.cl
+const VENTANA_MS   = 60 * 1000;
+const MAX_CONSULTAS = 60;
+const consultas    = new Map();
+
+app.use('/api', (req, res, next) => {
+  const ahora = Date.now();
+  const actual = consultas.get(req.ip);
+
+  if (!actual || ahora - actual.inicio > VENTANA_MS) {
+    consultas.set(req.ip, { inicio: ahora, total: 1 });
+    return next();
+  }
+  if (++actual.total > MAX_CONSULTAS) {
+    res.set('Retry-After', Math.ceil((actual.inicio + VENTANA_MS - ahora) / 1000));
+    return res.status(429).json({ error: 'Demasiadas consultas, intenta en un minuto' });
+  }
+  next();
+});
+
+// Limpia IPs antiguas para que el mapa no crezca sin límite
+setInterval(() => {
+  const limite = Date.now() - VENTANA_MS;
+  for (const [ip, c] of consultas) if (c.inicio < limite) consultas.delete(ip);
+}, VENTANA_MS).unref();
 
 // Meta verifica el webhook con GET
 app.get('/webhook', (req, res) => {

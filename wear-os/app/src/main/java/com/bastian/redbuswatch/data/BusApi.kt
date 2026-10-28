@@ -15,7 +15,8 @@ interface BusApiService {
     @GET("api/nearby")
     suspend fun getNearby(
         @Query("lat") lat: Double,
-        @Query("lng") lng: Double
+        @Query("lng") lng: Double,
+        @Query("radio") radio: Int
     ): NearbyResponse
 }
 

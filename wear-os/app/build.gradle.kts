@@ -40,6 +40,7 @@ dependencies {
     implementation(platform(libs.compose.bom))
     implementation(libs.activity.compose)
     implementation(libs.compose.foundation)
+    implementation(libs.material.icons.core)
     implementation(libs.compose.material3)
     implementation(libs.compose.ui.tooling)
     implementation(libs.core.splashscreen)

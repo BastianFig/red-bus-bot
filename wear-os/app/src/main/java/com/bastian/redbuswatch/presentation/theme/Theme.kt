@@ -21,6 +21,10 @@ private val RedBusColorScheme = ColorScheme(
     onSecondary        = OnBackground,
     background         = BackgroundDark,
     onBackground       = OnBackground,
+    surfaceContainer     = Color(0xFF1B1B1D),
+    surfaceContainerHigh = Color(0xFF2A2A2D),
+    onSurface            = OnBackground,
+    onSurfaceVariant     = Color(0xFFB8B8BC),
 )
 
 @Composable
