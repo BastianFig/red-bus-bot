@@ -11,6 +11,11 @@ import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,8 +29,10 @@ import androidx.compose.material.icons.filled.Warning
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -158,10 +165,13 @@ fun BusApp(vm: BusViewModel = viewModel()) {
 
 // ---------- Estructura común ----------
 
-// Pantalla con título arriba y lista con scroll; el botón inferior es opcional
+// Pantalla con título arriba y lista con scroll; el ícono, el subtítulo, la acción y el botón inferior son opcionales
 @Composable
 private fun Pantalla(
     titulo: String,
+    icono: ImageVector? = null,
+    subtitulo: String? = null,
+    accion: (@Composable () -> Unit)? = null,
     edgeButton: (@Composable BoxScope.() -> Unit)? = null,
     content: TransformingLazyColumnScope.(TransformationSpec) -> Unit
 ) {
@@ -179,7 +189,33 @@ private fun Pantalla(
                 ListHeader(
                     modifier = Modifier.transformedHeight(this, spec),
                     transformation = SurfaceTransformation(spec)
-                ) { Text(titulo) }
+                ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            if (icono != null) {
+                                Icon(
+                                    imageVector = icono,
+                                    contentDescription = null,
+                                    tint = MaterialTheme.colorScheme.primary,
+                                    modifier = Modifier.size(16.dp)
+                                )
+                                Spacer(Modifier.width(4.dp))
+                            }
+                            Text(titulo)
+                            if (accion != null) {
+                                Spacer(Modifier.width(4.dp))
+                                accion()
+                            }
+                        }
+                        if (subtitulo != null) {
+                            Text(
+                                text = subtitulo,
+                                fontSize = 10.sp,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                }
             }
             content(spec)
         }
@@ -225,27 +261,12 @@ private fun MensajeEstado(texto: String, esError: Boolean = false) {
 
 @Composable
 private fun CercaPage(vm: BusViewModel, onReintentar: () -> Unit) {
-    Pantalla(titulo = "Cerca de mí") { spec ->
-        item {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                IconButton(
-                    onClick = onReintentar,
-                    enabled = !vm.cercaLoading,
-                    modifier = Modifier.size(32.dp)
-                ) {
-                    Icon(Icons.Filled.Refresh, contentDescription = "Actualizar ubicación", modifier = Modifier.size(18.dp))
-                }
-                if (vm.cercaLoading) {
-                    Spacer(Modifier.width(6.dp))
-                    Text("Buscando…", fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                }
-            }
-        }
-
+    Pantalla(
+        titulo = "Cerca de mí",
+        icono = Icons.Filled.LocationOn,
+        subtitulo = if (vm.cercaLoading) "Buscando…" else "A 300 m a la redonda",
+        accion = { BotonActualizar(cargando = vm.cercaLoading, onClick = onReintentar) }
+    ) { spec ->
         if (vm.cercaLoading && vm.cercanos.isEmpty()) {
             item { CircularProgressIndicator(modifier = Modifier.padding(16.dp)) }
         }
@@ -279,7 +300,16 @@ private fun CercaPage(vm: BusViewModel, onReintentar: () -> Unit) {
 
 @Composable
 private fun FavoritosPage(vm: BusViewModel) {
-    Pantalla(titulo = "Favoritos") { spec ->
+    val cantidad = vm.favorites.size
+    Pantalla(
+        titulo = "Favoritos",
+        icono = Icons.Filled.Star,
+        subtitulo = when (cantidad) {
+            0 -> null
+            1 -> "1 paradero"
+            else -> "$cantidad paraderos"
+        }
+    ) { spec ->
         if (vm.favorites.isEmpty()) {
             item { MensajeEstado("Aún no tienes favoritos. Abre un paradero y toca la estrella.") }
         }
@@ -287,26 +317,21 @@ private fun FavoritosPage(vm: BusViewModel) {
             Row(verticalAlignment = Alignment.CenterVertically, modifier = tarjetaModifier(spec)) {
                 Card(
                     onClick = { vm.buscar(fav) },
-                    modifier = Modifier.weight(1f),
+                    // Card trae una altura mínima propia; una altura fija la reduce de verdad
+                    modifier = Modifier.weight(1f).height(38.dp),
+                    contentPadding = PaddingValues(horizontal = 14.dp, vertical = 0.dp),
                     transformation = SurfaceTransformation(spec)
                 ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(
-                            imageVector = Icons.Filled.Star,
-                            contentDescription = null,
-                            tint = MaterialTheme.colorScheme.primary,
-                            modifier = Modifier.size(18.dp)
-                        )
-                        Spacer(Modifier.width(8.dp))
-                        Text(text = fav, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                    Row(modifier = Modifier.fillMaxHeight(), verticalAlignment = Alignment.CenterVertically) {
+                        Text(text = fav, fontWeight = FontWeight.Bold, fontSize = 13.sp)
                     }
                 }
-                Spacer(Modifier.width(4.dp))
-                IconButton(onClick = { vm.toggleFavorite(fav) }, modifier = Modifier.size(36.dp)) {
+                Spacer(Modifier.width(2.dp))
+                IconButton(onClick = { vm.toggleFavorite(fav) }, modifier = Modifier.size(30.dp)) {
                     Icon(
                         imageVector = Icons.Filled.Delete,
                         contentDescription = "Quitar favorito",
-                        modifier = Modifier.size(18.dp)
+                        modifier = Modifier.size(16.dp)
                     )
                 }
             }
@@ -316,7 +341,7 @@ private fun FavoritosPage(vm: BusViewModel) {
 
 @Composable
 private fun BuscarPage(onBuscar: () -> Unit) {
-    Pantalla(titulo = "Buscar") { spec ->
+    Pantalla(titulo = "Buscar", icono = Icons.Filled.Search, subtitulo = "Ingresa un código") { spec ->
         item {
             Button(
                 onClick = onBuscar,
@@ -329,6 +354,24 @@ private fun BuscarPage(onBuscar: () -> Unit) {
             }
         }
         item { MensajeEstado("Escribe el código del paradero, por ejemplo PA433.") }
+    }
+}
+
+// Ícono de actualizar junto al título; gira mientras se busca
+@Composable
+private fun BotonActualizar(cargando: Boolean, onClick: () -> Unit) {
+    val giro by rememberInfiniteTransition(label = "giro").animateFloat(
+        initialValue = 0f,
+        targetValue = 360f,
+        animationSpec = infiniteRepeatable(tween(durationMillis = 900, easing = LinearEasing)),
+        label = "angulo"
+    )
+    IconButton(onClick = onClick, enabled = !cargando, modifier = Modifier.size(28.dp)) {
+        Icon(
+            imageVector = Icons.Filled.Refresh,
+            contentDescription = "Actualizar ubicación",
+            modifier = Modifier.size(16.dp).rotate(if (cargando) giro else 0f)
+        )
     }
 }
 
