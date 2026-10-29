@@ -21,7 +21,6 @@ async function fetchToken() {
       .split(',')
       .map(c => c.split(';')[0].trim())
       .join('; ');
-    console.log('🍪 Cookies:', sessionCookies);
   }
 
   const html = await res.text();
@@ -33,9 +32,6 @@ async function fetchToken() {
   const tokenBase64 = match[1];
   // Decodificar de Base64 a string — así lo hace el JS del browser
   const tokenDecoded = Buffer.from(tokenBase64, 'base64').toString('utf8');
-
-  console.log('🔑 Token Base64:', tokenBase64.substring(0, 40) + '...');
-  console.log('🔓 Token decodificado:', tokenDecoded.substring(0, 60) + '...');
 
   tokenCache.setToken(tokenDecoded);
   return tokenDecoded;
@@ -55,10 +51,7 @@ async function getBuses(paradero, servicio = '') {
     t:       jwt
   });
 
-  const url = `${RED_API}?${params}`;
-  console.log('🌐 Consultando:', url);
-
-  const res = await fetch(url, {
+  const res = await fetch(`${RED_API}?${params}`, {
     headers: {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
       'Accept': '*/*',
@@ -71,22 +64,9 @@ async function getBuses(paradero, servicio = '') {
     }
   });
 
-  const rawText = await res.text();
-  console.log('📦 Status:', res.status);
-  console.log('📦 Respuesta:', rawText.substring(0, 800));
-
   if (!res.ok) throw new Error(`HTTP ${res.status} desde red.cl`);
 
-  const data = JSON.parse(rawText);
-
-  // Función para ver si hay mas códigos disponibles en la respuesta:
-  // Debug temporal — ver todos los códigos
-    const codigos = data?.servicios?.item?.map(b => ({
-      servicio: b.servicio,
-      codigo: b.codigorespuesta,
-      mensaje: b.respuestaServicio
-    }));
-    console.log('📊 Códigos:', JSON.stringify(codigos, null, 2));
+  const data = await res.json();
 
   return data?.servicios?.item || [];
 }
