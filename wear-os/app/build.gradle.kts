@@ -42,7 +42,6 @@ dependencies {
     implementation(libs.compose.foundation)
     implementation(libs.material.icons.core)
     implementation(libs.compose.material3)
-    implementation(libs.compose.ui.tooling)
     implementation(libs.core.splashscreen)
     implementation(libs.play.services.wearable)
     implementation(libs.play.services.location)
@@ -59,4 +58,5 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.test.manifest)
     debugImplementation(libs.ui.tooling)
+    debugImplementation(libs.compose.ui.tooling)
 }

@@ -8,17 +8,22 @@ const router = express.Router();
 // Tiempos de llegada de un paradero
 router.get('/buses/:paradero', async (req, res) => {
   const { paradero } = req.params;
-  const servicio     = req.query.servicio || '';
+  const servicio     = req.query.servicio ?? '';
 
   if (!/^[A-Za-z]{2}\d{1,5}$/.test(paradero)) {
     return res.status(400).json({ error: 'Código de paradero inválido (ej: PA433 o PF54)' });
+  }
+  // Opcional: debe ser un solo valor alfanumérico (ej: 506v, B01)
+  if (servicio !== '' && !/^[A-Za-z0-9]{1,6}$/.test(servicio)) {
+    return res.status(400).json({ error: 'Servicio inválido (ej: 506v o B01)' });
   }
 
   try {
     const buses = await getBuses(paradero.toUpperCase(), servicio.toUpperCase());
     res.json({ paradero: paradero.toUpperCase(), buses });
   } catch (err) {
-    res.status(502).json({ error: 'Error consultando red.cl', detail: err.message });
+    console.error('Error consultando red.cl:', err.message);
+    res.status(502).json({ error: 'Error consultando red.cl' });
   }
 });
 
@@ -36,7 +41,8 @@ router.get('/nearby', (req, res) => {
   try {
     res.json({ lat, lng, radio, paraderos: getNearby(lat, lng, radio, limit) });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('Error buscando paraderos cercanos:', err.message);
+    res.status(500).json({ error: 'Error buscando paraderos cercanos' });
   }
 });
 

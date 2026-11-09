@@ -7,3 +7,8 @@ build/
 captures/
 .externalNativeBuild/
 .cxx/
+
+# Llaves de firma de la app: nunca al repositorio
+*.jks
+*.keystore
+keystore.properties

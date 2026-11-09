@@ -140,7 +140,7 @@ GET /api/nearby?lat=-33.4489&lng=-70.6693&radio=300&limit=10
 }
 ```
 
-Todos los endpoints de `/api` tienen un límite de 60 consultas por minuto por IP (responden `429` al pasarse).
+Todos los endpoints de `/api` tienen un límite de 60 consultas por minuto por IP (responden `429` al pasarse). Los tiempos de un mismo paradero se guardan 20 segundos en memoria, así varios usuarios comparten una sola consulta a red.cl.
 
 ---
 

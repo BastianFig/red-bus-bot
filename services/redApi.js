@@ -42,7 +42,7 @@ async function getJwt() {
   return fetchToken();
 }
 
-async function getBuses(paradero, servicio = '') {
+async function consultarBuses(paradero, servicio) {
   const jwt = await getJwt();
 
   const params = new URLSearchParams({
@@ -69,6 +69,32 @@ async function getBuses(paradero, servicio = '') {
   const data = await res.json();
 
   return data?.servicios?.item || [];
+}
+
+// Varios usuarios del mismo paradero comparten una sola consulta a red.cl.
+// Se guarda la promesa, así las consultas simultáneas también se unen.
+const CACHE_MS      = 20 * 1000;
+const MAX_ENTRADAS  = 500;
+const cacheBuses    = new Map();
+
+function getBuses(paradero, servicio = '') {
+  const clave    = `${paradero}|${servicio}`;
+  const guardada = cacheBuses.get(clave);
+  if (guardada && Date.now() < guardada.expira) return guardada.promesa;
+
+  const promesa = consultarBuses(paradero, servicio);
+  cacheBuses.delete(clave);
+  cacheBuses.set(clave, { expira: Date.now() + CACHE_MS, promesa });
+
+  // Una consulta fallida no se guarda
+  promesa.catch(() => {
+    if (cacheBuses.get(clave)?.promesa === promesa) cacheBuses.delete(clave);
+  });
+
+  // Tope de memoria: elimina la entrada más antigua
+  if (cacheBuses.size > MAX_ENTRADAS) cacheBuses.delete(cacheBuses.keys().next().value);
+
+  return promesa;
 }
 
 module.exports = { getBuses };
