@@ -4,8 +4,9 @@ const rateLimit = require('./middleware/rateLimit');
 
 const app = express();
 
-// Detrás del proxy de Render, para que req.ip sea la IP real del cliente
-app.set('trust proxy', 1);
+// Render va detrás de Cloudflare: son dos proxys (Cloudflare y el balanceador de Render).
+// Con 2, req.ip es la IP real del cliente; con 1 sería la de Cloudflare y el límite no contaría bien.
+app.set('trust proxy', 2);
 
 // No anunciar qué framework usa el servidor
 app.disable('x-powered-by');
