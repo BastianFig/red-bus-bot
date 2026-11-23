@@ -98,6 +98,7 @@ GET /api/buses/PF54
 ```json
 {
   "paradero": "PA433",
+  "nombre": "Parada 1 / Escuela de Ingeniería",
   "buses": [
     {
       "servicio": "506v",

@@ -2,6 +2,7 @@ package com.bastian.redbuswatch.data
 
 data class BusResponse(
     val paradero: String,
+    val nombre: String? = null,
     val buses: List<Bus>
 )
 

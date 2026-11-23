@@ -64,7 +64,11 @@ async function consultarBuses(paradero, servicio) {
     }
   });
 
-  if (!res.ok) throw new Error(`HTTP ${res.status} desde red.cl`);
+  if (!res.ok) {
+    const err = new Error(`HTTP ${res.status} desde red.cl`);
+    err.status = res.status;
+    throw err;
+  }
 
   const data = await res.json();
 

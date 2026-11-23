@@ -45,4 +45,12 @@ function getNearby(lat, lng, radio = 500, limit = 20) {
   return result.sort((a, b) => a.distancia - b.distancia).slice(0, limit);
 }
 
-module.exports = { getNearby, load };
+// Búsqueda por código (PA433), con un índice que se arma una sola vez
+let porCodigo = null;
+
+function getStop(codigo) {
+  if (!porCodigo) porCodigo = new Map(load().map(s => [s.c, s]));
+  return porCodigo.get(codigo);
+}
+
+module.exports = { getNearby, getStop, load };

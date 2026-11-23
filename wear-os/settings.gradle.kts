@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "RedBusWatch"
+rootProject.name = "MicroWatch"
 include(":app")

@@ -1,9 +1,18 @@
 // API para la app Wear OS
 const express = require('express');
 const { getBuses }  = require('../services/redApi');
-const { getNearby } = require('../services/stopsService');
+const { getNearby, getStop } = require('../services/stopsService');
 
 const router = express.Router();
+
+// El nombre es opcional: si faltan los datos de paraderos, los tiempos siguen funcionando
+function nombreParadero(codigo) {
+  try {
+    return getStop(codigo)?.n ?? null;
+  } catch {
+    return null;
+  }
+}
 
 // Tiempos de llegada de un paradero
 router.get('/buses/:paradero', async (req, res) => {
@@ -19,9 +28,12 @@ router.get('/buses/:paradero', async (req, res) => {
   }
 
   try {
-    const buses = await getBuses(paradero.toUpperCase(), servicio.toUpperCase());
-    res.json({ paradero: paradero.toUpperCase(), buses });
+    const codigo = paradero.toUpperCase();
+    const buses  = await getBuses(codigo, servicio.toUpperCase());
+    res.json({ paradero: codigo, nombre: nombreParadero(codigo), buses });
   } catch (err) {
+    // red.cl responde 400 cuando el paradero no existe
+    if (err.status === 400) return res.status(404).json({ error: 'Paradero no encontrado' });
     console.error('Error consultando red.cl:', err.message);
     res.status(502).json({ error: 'Error consultando red.cl' });
   }
