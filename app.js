@@ -11,6 +11,9 @@ app.set('trust proxy', 3);
 // No anunciar qué framework usa el servidor
 app.disable('x-powered-by');
 
+// Para monitores de disponibilidad (UptimeRobot): responde rápido y no consulta a red.cl
+app.get('/health', (req, res) => res.json({ status: 'ok' }));
+
 app.use('/api', rateLimit, require('./routes/api'));
 
 module.exports = app;
